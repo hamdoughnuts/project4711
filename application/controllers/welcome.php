@@ -19,16 +19,31 @@ class Welcome extends Application {
     //-------------------------------------------------------------
 
     function index() {
-        $this->data['pagebody'] = 'homepage';    // this is the view we want shown
-        // build the list of attractions, to pass on to our view
-        $source = $this->attractions->all();
+        $this->data['pagebody'] = 'homepage'; 
+        
+        $recent = $this->attractions->first();
+        $this->data = array_merge($this->data, $recent);
+        
+        $source = $this->attractions->getByCategory('Play');
+        $categories = array();
+        foreach ($source as $record) {
+            $categories[] = array('clocation' => $record['location'], 'cimage' => $record['image'], 'ccategory' => $record['category']);
+        }
+        $this->data['categories'] = $categories;
+        
+        $this->render();
+        
+        /*
+        $source = $this->attractions->getByID(4);
         $attractions = array();
         foreach ($source as $record) {
-            $attractions[] = array('location' => $record['location'], 'image' => $record['image'], 'href' => $record['where']);
+            $attractions[] = array('location' => $record['location'], 'image' => $record['image'], 'category' => $record['category']);
         }
         $this->data['attractions'] = $attractions;
 
         $this->render();
+         * 
+         */
     }
 
 }

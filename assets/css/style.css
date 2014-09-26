@@ -1,5 +1,39 @@
-/* CSS definition file containing site stylesheet */
-body {}
-#content {width:100%; margin-left:5% auto;margin-right:5% auto;}
-#footer {font-size: small; font-style:italic;text-align:center;}
-.row>div {margin-bottom:10px;}
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 25, 2014, 9:44:33 AM
+    Author     : A00569217
+*/
+.body {
+    
+}
+#recent-div {
+    height:550px; 
+    border: 1px solid black;
+}
+#eat-div{
+   height: 400px;
+	background-color: gray;
+}
+#play-div{
+       height: 400px;
+	background-color: LightGray;
+}
+#sleep-div{
+       height: 400px;
+	background-color: gray;
+}
+.eat-play-sleep{
+    
+}
+.top-buffer {
+	margin-top: 20px;
+}
+.inner-div{
+	position:relative;
+	width:90%
+}
