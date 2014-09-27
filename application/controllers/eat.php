@@ -1,4 +1,4 @@
-.<?php
+<?php
 /* 
  * @author glo and dtran
  */

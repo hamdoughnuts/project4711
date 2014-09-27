@@ -13,8 +13,8 @@ and open the template in the editor.
 }
 
 #recent-div {
-    /*padding-right: 0;*/
-    /*padding-left: 0;*/
+    padding-right: 0;
+    padding-left: 0;
     background-color: lightcyan;
 }
 

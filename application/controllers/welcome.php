@@ -23,29 +23,9 @@ class Welcome extends Application {
         
         $recent = $this->attractions->first();
         $this->data = array_merge($this->data, $recent);
-        
-        $source = $this->attractions->getByCategory('Play');
-        $categories = array();
-        foreach ($source as $record) {
-            $categories[] = array('clocation' => $record['location'], 'cimage' => $record['image'], 'ccategory' => $record['category']);
-        }
-        $this->data['categories'] = $categories;
-        
-        $this->render();
-        
-        /*
-        $source = $this->attractions->getByID(4);
-        $attractions = array();
-        foreach ($source as $record) {
-            $attractions[] = array('location' => $record['location'], 'image' => $record['image'], 'category' => $record['category']);
-        }
-        $this->data['attractions'] = $attractions;
 
         $this->render();
-         * 
-         */
     }
-
 }
 
 /* End of file welcome.php */
