@@ -11,21 +11,24 @@ and open the template in the editor.
 .body {
     
 }
+
 #recent-div {
-    height:550px; 
-    border: 1px solid black;
+    /*padding-right: 0;*/
+    /*padding-left: 0;*/
+    background-color: lightcyan;
 }
-#eat-div{
-   height: 400px;
-	background-color: gray;
+
+#inner-recent-div {
+    height: 400px;
 }
-#play-div{
-       height: 400px;
-	background-color: LightGray;
+#cat-divs {
+    height: 400px;
+    /*background-color: gray;*/
 }
-#sleep-div{
-       height: 400px;
-	background-color: gray;
+#inner-cat-divs{
+    background-color: lightsalmon;
+    min-height:380px;
+    min-width: 300px;
 }
 .eat-play-sleep{
     
@@ -36,4 +39,10 @@ and open the template in the editor.
 .inner-div{
 	position:relative;
 	width:90%
+}
+
+.fitImgToContainer {
+    position: relative;
+    width:400%;
+
 }
