@@ -17,7 +17,7 @@
                 <div id="cat-divs" class="col-lg-4">
                     <div id="inner-cat-divs" class="col-lg-12">
                         <div class="col-lg-4">
-                            <a href="{ccategory}/{clocation}">
+                            <a href="eat">
                                 <img class="fitImgToContainer" src="/data/eat.jpg" title="EAT"/>
                             </a>
                         </div>
