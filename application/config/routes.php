@@ -39,7 +39,9 @@
 */
 
 $route['default_controller'] = "welcome";
-$route['eat/:num'] = "eat/single/01";
+$route['eat/(:num)'] = "eat/single/$1";
+$route['play/(:num)'] = "play/single/$1";
+$route['sleep/(:num)'] = "sleep/single/$1";
 $route['404_override'] = '';
 
 
