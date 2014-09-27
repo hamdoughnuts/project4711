@@ -11,7 +11,7 @@ class Attractions extends CI_Model {
         array(
             'id' => '01',
             'name' => 'Getto',
-            'category' => 'Eat',
+            'category' => 'eat',
             'image' => 'Getto-Amsterdam.jpg',
             'longtext' => 'Getto is a burger bar with a difference: each burger is named after a drag queen who performs there – keep an eye on the website if you\'re keen to catch an act. It describes itself as "an attitude-free zone, for gays, lesbians, bi, queers and straights". Relaxed and friendly, the bar staff mix great cocktails, and the interior has a chilled vibe. The burgers don\'t disappoint: try the Jennifer Hopelezz beef burger with guacamole and bacon, or the Dolly Bellefleur lamb burger with tzatziki and grilled courgette. They\'re served with chunky seasoned wedges and a mayo-heavy salad. And try the Gettopolitan – a cosmo made with Dutch Jenever liqueur.',
             'shortext' => 'A Burger bar with a difference, starting at €10, they open Tuesday-Thursday 4pm - 1am, Friday-Saturday 4pm - 2am, Sunday 4pm - Midnight',

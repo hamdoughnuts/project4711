@@ -13,7 +13,7 @@
                 <div id="cat-divs" class="col-lg-4">
                     <div class="col-lg-10 col-lg-offset-1">
 
-                        <div class="col-lg-4"><a href="{category}/{name}"><img class="fitImgToContainer" src="/data/{image}" title="{location}"/></a></div>
+                        <div class="col-lg-4"><a href="{category}/{id}"><img class="fitImgToContainer" src="/data/{image}" title="{location}"/></a></div>
 
                     </div>
                 </div>
