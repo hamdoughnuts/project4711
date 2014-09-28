@@ -18,17 +18,34 @@ and open the template in the editor.
     background-color: lightcyan;
 }
 
-#inner-recent-div {
+.inner-recent-div {
     height: 400px;
 }
-#cat-divs {
-    height: 400px;
-    /*background-color: gray;*/
+.cat-divs {
+    /*height: 400px;*/
+
 }
-#inner-cat-divs{
-    background-color: lightsalmon;
-    min-height:380px;
-    min-width: 300px;
+.cat-divs:hover .inner-cat-divs{
+    opacity : 0.6;
+    filter: alpha(opacity=40);
+
+}
+.cat-divs h1{
+    display:none;
+    color:white;
+    pointer-events: none;
+}
+.cat-divs:hover h1{
+    display: block;
+    position:absolute;
+    left:10%;
+
+}
+.inner-cat-divs{
+    background-color: white;
+    /*min-height:380px;*/
+    /*min-width: 300px;*/
+
 }
 .eat-play-sleep{
     

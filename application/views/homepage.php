@@ -14,34 +14,35 @@
             <div id="eat-play-sleep" class="col-lg-12 top-buffer">
                 
                 <!-- CATEGORY BUTTON-->
-                <div id="cat-divs" class="col-lg-4">
-                    <div id="inner-cat-divs" class="col-lg-12">
-                        <div class="col-lg-4">
+                <div class="col-lg-4 col-md-5 grow cat-divs">
+                    <div class="col-lg-11 inner-cat-divs">
                             <a href="eat">
-                                <img class="fitImgToContainer" src="/data/eat.jpg" title="EAT"/>
+                                <img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
                             </a>
-                        </div>
-                    </div>    
+
+                    </div>
+                    <h1>Eat</h1>
+                </div>
+
+
+                <div  class="col-lg-4 col-md-5 grow cat-divs">
+                    <div  class="col-lg-11 inner-cat-divs">
+                            <a href="play">
+                                <img class="img-responsive" src="/data/play.jpg" title="EAT"/>
+                            </a>
+
+                    </div>
+                    <h1>Play</h1>
                 </div>
                 
-                <div id="cat-divs" class="col-lg-4">
-                    <div id="inner-cat-divs" class="col-lg-12">
-                        <div class="col-lg-4">
-                            <a href="{ccategory}/{clocation}">
-                                <img class="fitImgToContainer" src="/data/play.jpg" title="EAT"/>
+                <div  class="col-lg-4 col-md-5 grow cat-divs">
+                    <div class="col-lg-11 inner-cat-divs">
+                            <a href="sleep">
+                                <img class="img-responsive" src="/data/sleep.jpg" title="EAT"/>
                             </a>
-                        </div>
-                    </div>    
-                </div>
-                
-                <div id="cat-divs" class="col-lg-4">
-                    <div id="inner-cat-divs" class="col-lg-12">
-                        <div class="col-lg-4">
-                            <a href="{ccategory}/{clocation}">
-                                <img class="fitImgToContainer" src="/data/sleep.jpg" title="EAT"/>
-                            </a>
-                        </div>
-                    </div>    
+
+                    </div>
+                    <h1>Sleep</h1>
                 </div>
                 
             </div>
