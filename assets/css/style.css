@@ -63,3 +63,27 @@ and open the template in the editor.
     width:400%;
 
 }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #666666;
+  text-align: center;
+}
+
+#test {
+    border: black solid 1px;
+    background-color: lightsalmon;
+    padding: 0;
+}

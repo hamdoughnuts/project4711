@@ -35,29 +35,12 @@ if (!defined('APPPATH'))
             </div>
             <!-- /#sidebar-wrapper -->
 
-            <!--
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <a class="brand" href="/"><img src="/assets/images/logo.png"/></a>
-                    {menubar} </div>
-            </div>           
-            -->
-
             <div id="content">
-                <!--
-                <h1>{title}</h1>
-                -->
                 {content}
             </div>
 
-            
-
-
-
-
-
-            <div id="footer" class="span12">
-                Copyright &copy; 2014,  <a href="mailto:someone@somewhere.com">Me</a>.
+            <div class="footer span12">
+                Copyright &copy; 2014,  <a href="mailto:glo18@mybcit.ca">Germaine Lo</a> and <a href="mailto:glo18@mybcit.ca">Danny Tran</a>.
             </div>
         </div>
         <script src="/assets/js/jquery-1.11.0.min.js"></script>

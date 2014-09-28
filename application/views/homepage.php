@@ -23,8 +23,6 @@
                     </div>
                     <h1>Eat</h1>
                 </div>
-
-
                 <div  class="col-lg-4 col-md-5 grow cat-divs">
                     <div  class="col-lg-11 inner-cat-divs">
                             <a href="play">
@@ -34,7 +32,6 @@
                     </div>
                     <h1>Play</h1>
                 </div>
-                
                 <div  class="col-lg-4 col-md-5 grow cat-divs">
                     <div class="col-lg-11 inner-cat-divs">
                             <a href="sleep">

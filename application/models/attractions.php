@@ -44,18 +44,7 @@ class Attractions extends CI_Model {
             'address' => 'Raamstraat 29',
             'date' => '9/27/14'
             ),
-        array(
-            'id' => '04',
-            'name' => 'Restaurant Azmarino',
-            'url' => 'Restaurant_Azmarino',
-            'category' => 'eat',
-            'image' => 'Restaurant-Azmarino.jpg',
-            'longtext' => 'East African food isn\'t widely represented in Amsterdam, but where it is, you can expect generosity and pride in the cuisine. Azmarino\'s decor is cosy and kitsch, with a convivial atmosphere to match. The food is served in giant sharing platters, the base of which is formed by a layer of the slightly sour, spongy pancakes that are typical of the region, with a further pile of the pancakes on the side to mop up the juices. Dishes are hot, sour, sweet and spicy all at the same time: marinated, juicy chicken drumsticks, slow-cooked lamb, and lentil-based sauces. Small piles of salad dotted around the platter offer welcome cool relief from the chilli.',
-            'shortext' => 'Taste the african culture. Mains from €9. Open Open Tues-Sat 5pm-11pm',
-            'contact' => '+31 20 671 7587',
-            'address' => '2e Sweelinckstraat 6',
-            'date' => '9/27/14'
-            ),
+        
         array(
             'id' => '05',
             'name' => 'Hotel Seven One Seven 717',
