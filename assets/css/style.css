@@ -22,13 +22,13 @@ and open the template in the editor.
     height: 400px;
 }
 #cat-divs {
-    height: 400px;
+    height: 300px;
+    border: red solid 1px;
     /*background-color: gray;*/
 }
 #inner-cat-divs{
     background-color: lightsalmon;
-    min-height:380px;
-    min-width: 300px;
+    max-height:25px;
 }
 .eat-play-sleep{
     
@@ -45,4 +45,28 @@ and open the template in the editor.
     position: relative;
     width:400%;
 
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #666666;
+  text-align: center;
+}
+
+#test {
+    border: black solid 1px;
+    background-color: lightsalmon;
+    padding: 0;
 }

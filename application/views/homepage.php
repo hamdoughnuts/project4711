@@ -27,7 +27,7 @@
                 <div id="cat-divs" class="col-lg-4">
                     <div id="inner-cat-divs" class="col-lg-12">
                         <div class="col-lg-4">
-                            <a href="{ccategory}/{clocation}">
+                            <a href="play">
                                 <img class="fitImgToContainer" src="/data/play.jpg" title="EAT"/>
                             </a>
                         </div>
@@ -37,7 +37,7 @@
                 <div id="cat-divs" class="col-lg-4">
                     <div id="inner-cat-divs" class="col-lg-12">
                         <div class="col-lg-4">
-                            <a href="{ccategory}/{clocation}">
+                            <a href="sleep">
                                 <img class="fitImgToContainer" src="/data/sleep.jpg" title="EAT"/>
                             </a>
                         </div>
