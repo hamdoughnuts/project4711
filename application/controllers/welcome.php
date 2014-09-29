@@ -1,12 +1,9 @@
 <?php
 
 /**
- * Our homepage. Show a table of all the author pictures. Clicking on one should show their quote.
- * Our quotes model has been autoloaded, because we use it everywhere.
+ * Our homepage. Shows the most recent attraction by date and 3 buttons for the 
+ * eat, play and sleep categories.
  * 
- * controllers/welcome.php
- *
- * ------------------------------------------------------------------------
  */
 class Welcome extends Application {
 
@@ -14,10 +11,10 @@ class Welcome extends Application {
         parent::__construct();
     }
 
-    //-------------------------------------------------------------
-    //  The normal pages
-    //-------------------------------------------------------------
-
+    /*
+     * Renders the homepage with the most recent attraction.
+     */
+    
     function index() {
         $this->data['pagebody'] = 'homepage'; 
         
@@ -27,6 +24,3 @@ class Welcome extends Application {
         $this->render();
     }
 }
-
-/* End of file welcome.php */
-/* Location: application/controllers/welcome.php */

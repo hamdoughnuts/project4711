@@ -5,7 +5,7 @@
  *
  * Default application controller
  *
- * @author		JLP
+ * @author		JLP, changes by: glo and dtran
  * @copyright           2010-2013, James L. Parry
  * ------------------------------------------------------------------------
  */

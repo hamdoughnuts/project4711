@@ -1,5 +1,7 @@
 <?php
 /* 
+ * Controller for the eat category.
+ * 
  * @author glo and dtran
  */
 class Eat extends Application {
@@ -9,8 +11,7 @@ class Eat extends Application {
     }
 
     /*
-     * Renders the page for the webapp for the "first" link in navbar.
-     * Loads the 'justone' view with the first quote.
+     * Renders the page for all attractions in the Eat category.
      */
     function index() {
         $this->data['pagebody'] = 'category';    // this is the view we want shown
@@ -26,6 +27,9 @@ class Eat extends Application {
         $this->render();
     }
     
+    /*
+     * Renders a single attraction in the eat category.
+     */
     function single($id) {
         $this->data['pagebody'] = 'justone';    // this is the view we want shown
         
