@@ -5,15 +5,17 @@
             <img src="/data/{image}" title="{name}" class="img-responsive"/>
         </div>
 
-        <div class="col-md-6">
-            <b>{name}</b><br/>
+        <div class="col-md-6 whiteBox">
+             <span class="whiteWords"><b>{name}</b></span>
+            <br/>
 
-            {contact}<br/>
-            {address}
+             <span class="whiteWords">{contact}</span>
+            <br/>
+            <span class="whiteWords">{address}</span>
         </div>
 
-        <div class="col-md-12 top-buffer">
-            {longtext}
+        <div class="col-md-12 top-buffer whiteBox">
+             <span class="whiteWords">{longtext}</span>
         </div>
 
     </div>
