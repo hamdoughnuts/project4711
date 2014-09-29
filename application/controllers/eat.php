@@ -19,7 +19,7 @@ class Eat extends Application {
         $source = $this->attractions->getByCategory('eat');
         $attractions = array();
         foreach ($source as $record) {
-            $attractions[] = array('id' => $record['id'], 'image' => $record['image'], 'category' => $record['category']);
+            $attractions[] = array('id' => $record['id'], 'image' => $record['image'], 'category' => $record['category'], 'name' => $record['name']);
         }
         $this->data['attractions'] = $attractions;
 

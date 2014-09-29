@@ -6,7 +6,7 @@
 <ul class="sidebar-nav">
     <li class="sidebar-brand">
         <a href="/">
-            Amsterdam
+            AMSTERDAM
         </a>
     </li>
     

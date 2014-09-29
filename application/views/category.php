@@ -9,12 +9,9 @@
                 {attractions}
                 <div id="cat-divs" class="col-lg-4">
                     
-
-                        <div class="col-lg-12" id="test">
-                            <a href="{category}/{id}"><img src="/data/{image}" title="{location}" class="img-responsive"/></a>
+                        <div class="col-lg-12">
+                            <a href="{category}/{id}"><img src="/data/{image}" title="{name}" class="img-responsive"/></a>
                         </div>
-
-                    
                 </div>
                 {/attractions}
             </div>

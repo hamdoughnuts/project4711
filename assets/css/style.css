@@ -43,9 +43,6 @@ and open the template in the editor.
 }
 .inner-cat-divs{
     background-color: white;
-    /*min-height:380px;*/
-    /*min-width: 300px;*/
-
 }
 .eat-play-sleep{
     
@@ -61,7 +58,6 @@ and open the template in the editor.
 .fitImgToContainer {
     position: relative;
     width:400%;
-
 }
 
 html {
@@ -70,14 +66,21 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 30px;
-  background-color: #333333;
+  height: 25px;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+.top-bar {
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  background-color: #000000;
+  padding: 20px 0px 20px 0px;
   text-align: center;
 }

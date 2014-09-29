@@ -34,6 +34,11 @@ if (!defined('APPPATH'))
                 {menubar}
             </div>
             <!-- /#sidebar-wrapper -->
+            
+            <div class="top-bar visible-xs">
+                <a href="/">AMSTERDAM</a><br/>
+                <a href="/eat">EAT</a> - <a href="/play">PLAY</a> - <a href="/sleep">SLEEP</a>
+            </div>
 
             <div id="content">
                 {content}
