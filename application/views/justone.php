@@ -6,16 +6,16 @@
         </div>
 
         <div class="col-md-6 whiteBox">
-             <span class="whiteWords"><b>{name}</b></span>
+            <span class="whiteWords"><b>{name}</b></span>
             <br/>
 
-             <span class="whiteWords">{contact}</span>
+            <span class="whiteWords">{contact}</span>
             <br/>
             <span class="whiteWords">{address}</span>
         </div>
 
         <div class="col-md-12 top-buffer whiteBox">
-             <span class="whiteWords">{longtext}</span>
+            <span class="whiteWords">{longtext}</span>
         </div>
 
     </div>

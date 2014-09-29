@@ -49,8 +49,9 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 25px;
-    background-color: #FFFFFF;
+    background-color: rgba(0,0,0,.1);
     text-align: center;
+    color:lightcyan;
 }
 
 .top-bar {

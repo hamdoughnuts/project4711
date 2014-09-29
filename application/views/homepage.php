@@ -16,6 +16,7 @@
                         <a href="eat">
                             <img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
                         </a>
+
                         <div class="showme">EAT</div>
                     </div>
                 </div>
@@ -25,6 +26,7 @@
                         <a href="play">
                             <img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
                         </a>
+
                         <div class="showme">PLAY</div>
                     </div>
                 </div>
@@ -34,6 +36,7 @@
                         <a href="sleep">
                             <img class="img-responsive" src="/data/sleep.jpg" title="SLEEP"/>
                         </a>
+
                         <div class="showme">SLEEP</div>
                     </div>
                 </div>
