@@ -8,79 +8,71 @@ and open the template in the editor.
     Created on : Sep 25, 2014, 9:44:33 AM
     Author     : A00569217
 */
-.body {
-    
-}
 
 #recent-div {
     padding-right: 0;
     padding-left: 0;
-    background-color: lightcyan;
 }
 
-.inner-recent-div {
-    height: 400px;
-}
 .cat-divs {
-    /*height: 400px;*/
-
+    padding-bottom: 30px;
 }
-.cat-divs:hover .inner-cat-divs{
-    opacity : 0.6;
+
+.cat-divs:hover {
+    opacity : 0.4;
     filter: alpha(opacity=40);
+}
 
-}
-.cat-divs h1{
-    display:none;
-    color:white;
-    pointer-events: none;
-}
-.cat-divs:hover h1{
-    display: block;
-    position:absolute;
-    left:10%;
-
-}
 .inner-cat-divs{
-    background-color: white;
-}
-.eat-play-sleep{
-    
-}
-.top-buffer {
-	margin-top: 20px;
-}
-.inner-div{
-	position:relative;
-	width:90%
+    text-align: center;
+    border: 1px solid black;
+    padding: 25px;
 }
 
-.fitImgToContainer {
-    position: relative;
-    width:400%;
+.inner-button {
+    text-align: center;
+}
+
+.inner-button img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-buffer {
+    margin-top: 20px;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 25px;
+    /* Margin bottom by footer height */
+    margin-bottom: 25px;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 25px;
-  background-color: #FFFFFF;
-  text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 25px;
+    background-color: #FFFFFF;
+    text-align: center;
 }
+
 .top-bar {
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  background-color: #000000;
-  padding: 20px 0px 20px 0px;
-  text-align: center;
+    width: 100%;
+    background-color: #000000;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+.showme{ 
+    display: none;
+}
+.inner-button:hover .showme{
+    display : block;
 }

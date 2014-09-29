@@ -9,7 +9,7 @@ $config['menu_choices'] = array(
         array('name' => 'EAT', 'link' => '/eat'),
         array('name' => 'PLAY', 'link' => '/play'),
         array('name' => 'SLEEP', 'link' => '/sleep'),
-        array('name' => 'ABOUT', 'link' => '/about'),
+        //array('name' => 'ABOUT', 'link' => '/about'),
         )
     );
 
