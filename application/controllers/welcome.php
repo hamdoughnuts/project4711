@@ -21,7 +21,7 @@ class Welcome extends Application {
     function index() {
         $this->data['pagebody'] = 'homepage'; 
         
-        $recent = $this->attractions->first();
+        $recent = $this->attractions->getMostRecent();
         $this->data = array_merge($this->data, $recent);
 
         $this->render();

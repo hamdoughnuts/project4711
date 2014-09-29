@@ -78,12 +78,6 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 30px;
-  background-color: #666666;
+  background-color: #333333;
   text-align: center;
-}
-
-#test {
-    border: black solid 1px;
-    background-color: lightsalmon;
-    padding: 0;
 }

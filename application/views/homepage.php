@@ -2,7 +2,7 @@
 
 <!-- Most recent  -->
 <div class="col-lg-12" id="recent-div">
-        <a href="{category}/{name}"><img src="/data/title.jpg" title="{name}" class="img-responsive"/></a>
+        <a href="{category}/{id}"><img src="/data/{image}" title="{name}" class="img-responsive"/></a>
 </div>
 <!-- End most recent-->
 
@@ -26,7 +26,7 @@
                 <div  class="col-lg-4 col-md-5 grow cat-divs">
                     <div  class="col-lg-11 inner-cat-divs">
                             <a href="play">
-                                <img class="img-responsive" src="/data/play.jpg" title="EAT"/>
+                                <img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
                             </a>
 
                     </div>
@@ -35,7 +35,7 @@
                 <div  class="col-lg-4 col-md-5 grow cat-divs">
                     <div class="col-lg-11 inner-cat-divs">
                             <a href="sleep">
-                                <img class="img-responsive" src="/data/sleep.jpg" title="EAT"/>
+                                <img class="img-responsive" src="/data/sleep.jpg" title="SLEEP"/>
                             </a>
 
                     </div>
