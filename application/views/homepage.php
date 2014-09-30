@@ -11,7 +11,7 @@
         <div class="row">
             <div id="eat-play-sleep" class="col-lg-12 top-buffer">
 
-                <div class="cat-divs col-lg-4 col-md-12 col-sm-12 grow">
+                <div class="cat-divs col-lg-4 col-xs-12 grow">
                     <div class="col-lg-10 col-lg-offset-1 inner-button">
                         <a href="eat">
                             <img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="cat-divs col-lg-4 col-md-12 col-sm-12 grow">
+                <div class="cat-divs col-lg-4 col-xs-12 grow">
                     <div class="col-lg-10 col-lg-offset-1 inner-button">
                         <a href="play">
                             <img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="cat-divs col-lg-4 col-md-12 col-sm-12 grow">
+                <div class="cat-divs col-lg-4 col-xs-12 grow">
                     <div class="col-lg-10 col-lg-offset-1 inner-button">
                         <a href="sleep">
                             <img class="img-responsive" src="/data/sleep.jpg" title="SLEEP"/>
