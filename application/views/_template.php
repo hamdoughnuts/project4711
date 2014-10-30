@@ -47,6 +47,7 @@ if (!defined('APPPATH'))
     <div class="footer span12">
         Copyright &copy; 2014, <a href="mailto:glo18@mybcit.ca">Germaine Lo</a> and <a href="mailto:glo18@mybcit.ca">Danny
             Tran</a>.
+            <a href="/admin">Admin</a>
     </div>
 </div>
 <script src="/assets/js/jquery-1.11.0.min.js"></script>

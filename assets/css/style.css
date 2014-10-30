@@ -10,8 +10,8 @@
 }
 
 .cat-divs:hover {
-    opacity : 1;
-    filter: alpha(opacity=40);
+    opacity : 1
+;    filter: alpha(opacity=40);
 }
 
 .inner-cat-divs{
@@ -64,14 +64,19 @@ body {
 .showme{ 
     display: none;
     color:white;
-    font-size: 40px;
-    position:relative;
-    top:-10px;
+    background-color:rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    width:100%;
+    
+    position:absolute;
+    top:0px;   
+
 }
+
 .whiteWords{
 
     color:lightgray;
-    font-size: 30px;
+    font-size: 20px;
 
 }
 .whiteBox{

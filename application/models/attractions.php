@@ -105,7 +105,7 @@ class Attractions extends CI_Model {
             'contact' => '+31 20 523 9222',
             'address' => 'Stadhouderskade 78, 1072 AE',
             'date' => '9/27/07'
-        ),
+        )
     );
 
     /*
