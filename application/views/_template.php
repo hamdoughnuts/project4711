@@ -25,6 +25,10 @@ if (!defined('APPPATH'))
         <link rel="stylesheet" type="text/css" href="/assets/css/simple-sidebar.css"/>
         <!-- HOVER CSS -->
         <link href="/assets/css/hover.css" rel="stylesheet" media="all">
+        <!-- lightbox CSS -->
+        <link href="/assets/css/lightbox.css" rel="stylesheet" media="all">
+
+                
     </head>
     <body>
         <div id="wrapper">
@@ -45,14 +49,13 @@ if (!defined('APPPATH'))
             </div>
 
             <div class="footer span12">
-                Copyright &copy; 2014, <a href="mailto:glo18@mybcit.ca">Germaine Lo</a> and <a href="mailto:glo18@mybcit.ca">Danny
+                Copyright &copy; 2014, <a href="mailto:glo18@mybcit.ca">Germaine Lo</a> and <a href="mailto:dtran54@mybcit.ca">Danny
                     Tran</a>.
                 <a href="/admin">Admin</a>
             </div>
         </div>
         <script src="/assets/js/bootstrap.min.js"></script>
         <script src="/assets/js/jquery-1.11.1.min.js"></script>
-
-
+        <script src="/assets/js/lightbox.min.js"></script>
     </body>
 </html>
