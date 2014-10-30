@@ -14,11 +14,16 @@ class Play extends Application {
      * For assignment 1. Renders a page for a single attraction in play category.
      */
     function index() {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        $this->data['pagebody'] = 'category';    // this is the view we want shown
         
-        $record = $this->attractions->getByID(10);
-        $this->data = array_merge($this->data, $record);
-        
+        // build the list of attractions, to pass on to our view
+        $source = $this->attractions->getByCategory('play');
+        $attractions = array();
+        foreach ($source as $record) {
+            $attractions[] = array('id' => $record['id'], 'image' => $record['image'], 'category' => $record['category'], 'name' => $record['name']);
+        }
+        $this->data['attractions'] = $attractions;
+
         $this->render();
     }
     
