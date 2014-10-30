@@ -14,10 +14,9 @@ class Admin extends Application {
     /*
      * Renders the homepage with the most recent attraction.
      */
-    
+
     function index() {
         $this->data['pagebody'] = 'category';    // this is the view we want shown
-        
         // build the list of attractions, to pass on to our view
         $source = $this->attractions->getAll();
         $attractions = array();
@@ -28,4 +27,5 @@ class Admin extends Application {
 
         $this->render();
     }
+
 }

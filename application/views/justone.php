@@ -2,8 +2,12 @@
     <div class="row-fluid top-buffer">
 
         <div class="col-md-6">
-            <img src="/data/{image}" title="{name}" class="img-responsive"/>
+            
+            <a href="someurl" data-toggle="lightbox">
+                <img src="/data/{image}" title="{name}" class="img-responsive"/>
+            </a>
         </div>
+
 
         <div class="col-md-6 whiteBox">
             <span class="whiteWords"><b>{name}</b></span>
@@ -20,3 +24,4 @@
 
     </div>
 </div>
+

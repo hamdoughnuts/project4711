@@ -127,11 +127,11 @@ class Attractions extends CI_Model {
                 return $record;
         return null;
     }
-    
+
     /*
      * Retrieves all attractions
      */
-    
+
     public function getAll() {
         return $this->data;
     }
@@ -148,16 +148,16 @@ class Attractions extends CI_Model {
                 $records[] = $record;
         return $records;
     }
-    
+
     /*
      * Retrieves the most recent attraction by date value
      */
-    
+
     public function getMostRecent() {
         $temp = $this->data[0];
         // iterate over the data and return most recent
         foreach ($this->data as $record)
-            if ( strtotime($record['date']) > strtotime($temp['date']))
+            if (strtotime($record['date']) > strtotime($temp['date']))
                 $temp = $record;
         return $temp;
     }
@@ -165,7 +165,7 @@ class Attractions extends CI_Model {
     /*
      * Retrieves the first attraction
      */
-    
+
     public function getFirst() {
         return $this->data[0];
     }
@@ -173,7 +173,7 @@ class Attractions extends CI_Model {
     /*
      * Retrieves the last attraction
      */
-    
+
     public function getLast() {
         $index = count($this->data) - 1;
         return $this->data[$index];

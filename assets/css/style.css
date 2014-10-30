@@ -10,8 +10,8 @@
 }
 
 .cat-divs:hover {
-    opacity : 1
-;    filter: alpha(opacity=40);
+    opacity : 1;
+            filter: alpha(opacity=40);
 }
 
 .inner-cat-divs{
@@ -67,7 +67,7 @@ body {
     background-color:rgba(0, 0, 0, 0.5);
     font-size: 20px;
     width:100%;
-    
+
     position:absolute;
     top:0px;   
 
@@ -82,6 +82,14 @@ body {
 .whiteBox{
     background-color: rgba(0,0,0,.5);
 }
-.inner-button:hover .showme{
+.inner-button:hover .showme {
     display : block;
+
+}
+#imagelightbox
+{
+    z-index: 9999;
+ 
+    -ms-touch-action: none;
+    touch-action: none;
 }

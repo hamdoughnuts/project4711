@@ -8,10 +8,11 @@
                 <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
                     <div class="col-lg-offset-0 inner-button grow">
                         <a href="sleep">
-                            <a href="{category}/{id}"><img src="/data/{image}" title="{name}" class="img-responsive"/>
+                            <a href="{category}/{id}">
+                                <img src="/data/{image}" title="{name}" class="img-responsive"/>
 
-                        <div class="showme">{name}</div>
-                        </a>
+                                <div class="showme">{name}</div>
+                            </a>
                         </a>
 
                     </div>
