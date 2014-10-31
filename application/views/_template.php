@@ -24,11 +24,11 @@ if (!defined('APPPATH'))
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="/assets/css/simple-sidebar.css"/>
         <!-- HOVER CSS -->
-        <link href="/assets/css/hover.css" rel="stylesheet" media="all">
+        <link href="/assets/css/hover.css" rel="stylesheet" media="all"/>
         <!-- lightbox CSS -->
-        <link href="/assets/css/lightbox.css" rel="stylesheet" media="all">
+        <link href="/assets/css/lightbox.css" rel="stylesheet" media="all"/>
 
-                
+
     </head>
     <body>
         <div id="wrapper">
