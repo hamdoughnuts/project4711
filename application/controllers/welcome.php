@@ -19,8 +19,11 @@ class Welcome extends Application {
         $this->data['pagebody'] = 'homepage';
 
         $recent = $this->attractions->getMostRecent();
-        $this->data = array_merge($this->data, $recent);
+        $this->data['id'] = $recent->id;
+        $this->data['category'] = $recent->category;
+        $this->data['banner'] = $recent->image1;
 
+        //echo var_dump($recent);
         $this->render();
     }
 

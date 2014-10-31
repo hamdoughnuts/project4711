@@ -22,7 +22,11 @@ class Sleep extends Application {
         $source = $this->attractions->getByCategory('sleep');
         $attractions = array();
         foreach ($source as $record) {
-            $attractions[] = array('id' => $record['id'], 'image' => $record['image'], 'category' => $record['category'], 'name' => $record['name']);
+            $attractions[] = array(
+                'id' => $record->id, 
+                'image' => $record->image1, 
+                'category' => $record->category, 
+                'name' => $record->name);
         }
         $this->data['attractions'] = $attractions;
 
@@ -55,7 +59,12 @@ class Sleep extends Application {
         $this->data['pagebody'] = 'justone';    // this is the view we want shown
 
         $record = $this->attractions->getByID($id);
-        $this->data = array_merge($this->data, $record);
+        //$this->data = array_merge($this->data, $record);
+        $this->data['image'] = $record->image1;
+        $this->data['name'] = $record->name;
+        $this->data['contact'] = $record->contact;
+        $this->data['address'] = $record->address;
+        $this->data['longtext'] = $record->longtext;
 
         $this->render();
     }
