@@ -1,6 +1,6 @@
 <div id="page-content-wrapper">
     <div class="container-fluid whiteBox">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" action="admin/post/{id}" method="post">
             <h1 class="white">Edit Form</h1>
             <div class="form-group">
                 <label for="ID" class="col-sm-2 control-label white">ID</label>
@@ -26,28 +26,28 @@
                         <div class="form-group">
                 <label for="image1" class="col-sm-2 control-label white">Image 1</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control white" id="image1" placeholder="{image1}">
+                    <input type="file" id="image1" class="white" accept="image/*" value="{image1}">
                 </div>
             </div>
             
                         <div class="form-group">
                 <label for="image2" class="col-sm-2 control-label white">Image 2</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control white" id="image2" placeholder="{image2}">
+                    <input type="file" id="image2" class="white" accept="image/*">
                 </div>
             </div>
             
                         <div class="form-group">
                 <label for="image3" class="col-sm-2 control-label white">Image 3</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control white" id="image3" placeholder="{image3}">
+                    <input type="file" id="image3" class="white" accept="image/*" value="{image3">
                 </div>
             </div>
             
                         <div class="form-group">
                 <label for="longtext" class="col-sm-2 control-label white">Long Text</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control white" id="longtext" placeholder="{longtext}">
+                    <textarea class="form-control" rows="3" id="longtext">{longtext}</textarea>
                 </div>
             </div>
             
@@ -75,7 +75,7 @@
                         <div class="form-group">
                 <label for="most_popular" class="col-sm-2 control-label white">Most Popular</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control white" id="most_popular" placeholder="{most_popular}">
+                    <input type="text" class="form-control white" id="most_popular" placeholder="{most_popular}"/>
                 </div>
             </div>
             
@@ -101,18 +101,3 @@
         </form>
     </div>
 </div>
-                     'id' => $record['id']
-                    , 'image' => $record['image']
-                    , 'category' => $record['category']
-                    , 'name' => $record['name']
-                    , 'image1' => $record['image']
-                    , 'image2' => $record['image2']
-                    , 'image3' => $record['image3']
-                    , 'longtext' => $record['longtext']
-                    , 'shorttext' => $record['shorttext']
-                    , 'contact' => $record['contact']
-                    , 'address' => $record['address']
-                    , 'most_popular' => $record['most_popular']
-                    , 'single_room_rate' => $record['single_room_rate']
-                    , 'double_room_rate' => $record['double_room_rate']
-                    , 'date' => $record['date']
