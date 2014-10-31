@@ -1,3 +1,4 @@
+
 #recent-div {
     padding-right: 0;
     padding-left: 0;
@@ -5,16 +6,16 @@
 
 .cat-divs {
     padding-bottom: 30px;
+    opacity : .85;
 }
 
 .cat-divs:hover {
-    opacity : 0.4;
-    filter: alpha(opacity=40);
+    opacity : 1;
+            filter: alpha(opacity=40);
 }
 
 .inner-cat-divs{
     text-align: center;
-    border: 1px solid black;
     padding: 25px;
 }
 
@@ -48,8 +49,9 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 25px;
-    background-color: #FFFFFF;
+    background-color: rgba(0,0,0,.1);
     text-align: center;
+    color:lightcyan;
 }
 
 .top-bar {
@@ -61,7 +63,36 @@ body {
 
 .showme{ 
     display: none;
+    color:white;
+    background-color:rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    width:100%;
+
+    position:absolute;
+    top:0px;   
+
 }
-.inner-button:hover .showme{
+
+.whiteWords{
+
+    color:lightgray;
+    font-size: 20px;
+
+}
+.white{
+    color:lightgray;
+}
+.whiteBox{
+    background-color: rgba(0,0,0,.5);
+}
+.inner-button:hover .showme {
     display : block;
+
+}
+#imagelightbox
+{
+    z-index: 9999;
+ 
+    -ms-touch-action: none;
+    touch-action: none;
 }

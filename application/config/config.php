@@ -10,8 +10,8 @@ $config['menu_choices'] = array(
         array('name' => 'PLAY', 'link' => '/play'),
         array('name' => 'SLEEP', 'link' => '/sleep'),
         array('name' => 'ABOUT', 'link' => '/about'),
-        )
-    );
+    )
+);
 
 
 /*

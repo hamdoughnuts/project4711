@@ -10,37 +10,44 @@
     <div class="container-fluid">
         <div class="row">
             <div id="eat-play-sleep" class="col-lg-12 top-buffer">
-
-                <div class="cat-divs col-lg-4 col-md-12 col-sm-12 grow">
-                    <div class="col-lg-10 col-lg-offset-1 inner-button">
-                        <a href="eat">
-                            <img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
-                        </a>
-                        <div class="showme">EAT</div>
-                    </div>
-                </div>
-
-                <div class="cat-divs col-lg-4 col-md-12 col-sm-12 grow">
-                    <div class="col-lg-10 col-lg-offset-1 inner-button">
-                        <a href="play">
-                            <img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
-                        </a>
-                        <div class="showme">PLAY</div>
-                    </div>
-                </div>
-
-                <div class="cat-divs col-lg-4 col-md-12 col-sm-12 grow">
-                    <div class="col-lg-10 col-lg-offset-1 inner-button">
+                <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
+                    <div class="col-lg-offset-0 inner-button grow">
                         <a href="sleep">
-                            <img class="img-responsive" src="/data/sleep.jpg" title="SLEEP"/>
+                            <a href="sleep"><img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
+
+                                <div class="showme">EAT</div>
+                            </a>
                         </a>
-                        <div class="showme">SLEEP</div>
+
                     </div>
                 </div>
+                <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
+                    <div class="col-lg-offset-0 inner-button grow">
+                        <a href="sleep">
+                            <a href="sleep"><img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
 
+                                <div class="showme">PLAY</div>
+                            </a>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
+                    <div class="col-lg-offset-0 inner-button grow">
+                        <a href="sleep">
+                            <a href="sleep"><img class="img-responsive" src="/data/sleep.jpg" title="SLEEP"/>
+
+                                <div class="showme">SLEEP</div>
+                            </a>
+                        </a>
+
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
+</div>
 
 </div>
 <!-- /#page-content-wrapper -->

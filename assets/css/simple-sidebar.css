@@ -5,14 +5,22 @@
  */
 
 /* Toggle Styles */
-
+body {
+    background-image: url("/data/amsterdam-bg-2.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    background-color: white;
+
 }
 
 #wrapper.toggled {
@@ -40,6 +48,7 @@
 
 #page-content-wrapper {
     width: 100%;
+
     padding: 15px;
 }
 

@@ -14,13 +14,17 @@ class Welcome extends Application {
     /*
      * Renders the homepage with the most recent attraction.
      */
-    
-    function index() {
-        $this->data['pagebody'] = 'homepage'; 
-        
-        $recent = $this->attractions->getMostRecent();
-        $this->data = array_merge($this->data, $recent);
 
+    function index() {
+        $this->data['pagebody'] = 'homepage';
+
+        $recent = $this->attractions->getMostRecent();
+        $this->data['id'] = $recent->id;
+        $this->data['category'] = $recent->category;
+        $this->data['banner'] = $recent->image1;
+
+        //echo var_dump($recent);
         $this->render();
     }
+
 }

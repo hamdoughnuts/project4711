@@ -9,7 +9,7 @@
             AMSTERDAM
         </a>
     </li>
-    
+
     {menudata}
     <li><a href="{link}">{name}</a></li>
     {/menudata}
