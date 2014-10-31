@@ -42,12 +42,11 @@ if (!defined('APPPATH'))
 
             <div id="content">
                 {content}
-                <div class="footer">
-                Copyright &copy; 2014,  <a href="mailto:glo18@mybcit.ca">Germaine Lo</a> and <a href="mailto:glo18@mybcit.ca">Danny Tran</a>.
-            </div>
             </div>
 
-            
+            <div class="footer span12">
+                Copyright &copy; 2014,  <a href="mailto:glo18@mybcit.ca">Germaine Lo</a> and <a href="mailto:glo18@mybcit.ca">Danny Tran</a>.
+            </div>
         </div>
         <script src="/assets/js/jquery-1.11.0.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>

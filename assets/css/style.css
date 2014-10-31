@@ -46,10 +46,9 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-left: -250px;
     /* Set the fixed height of the footer here */
     height: 25px;
-    background-color: #000000;
+    background-color: #FFFFFF;
     text-align: center;
 }
 
