@@ -1,7 +1,9 @@
 <!-- Page Content -->
 
 <!-- Most recent  -->
-<div class="col-lg-12" id="recent-div">
+
+<div class="col-lg-6 col-lg-offset-3 greyLayer grow" id="recent-div">
+    
     <a href="{category}/{id}"><img src="/data/{banner}" title="{name}" class="img-responsive"/></a>
 </div>
 <!-- End most recent-->

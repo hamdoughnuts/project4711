@@ -61,11 +61,13 @@ class Play extends Application {
         $record = $this->attractions->getByID($id);
         //$this->data = array_merge($this->data, $record);
         $this->data['image'] = $record->image1;
+        $this->data['image2'] = $record->image2;
+        $this->data['image3'] = $record->image3;
         $this->data['name'] = $record->name;
         $this->data['contact'] = $record->contact;
         $this->data['address'] = $record->address;
         $this->data['longtext'] = $record->longtext;
-
+        $this->data['shorttext'] = $record->shorttext;
         $this->render();
     }
 

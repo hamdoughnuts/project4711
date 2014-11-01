@@ -46,9 +46,38 @@ class Admin extends Application {
     function edit($id) {
         $this->data['pagebody'] = 'edit';
 
-        $record = $this->attractions->getByID($id);
-        /* can't use array_merge */
-        $this->data = array_merge($this->data, $record);
+
+        $record = $this->attractions->get($id);
+
+        $this->load->library('session');
+        //use "item" as session key
+        //assume no item record in-progress
+        if (!$this->session->userdata('item')) {
+            $this->session->set_userdata('item', $record);
+        } else {
+            $item = $this->session->userdata('item');
+
+            if ($record->code == $item->code) {
+
+                $record = $this->session->userdata('item');
+            }
+        }
+
+
+
+        $this->data['id'] = $record->id;
+        $this->data['category'] = $record->category;
+        $this->data['name'] = $record->name;
+        $this->data['image'] = $record->image1;
+        $this->data['image2'] = $record->image2;
+        $this->data['image3'] = $record->image3;
+        $this->data['contact'] = $record->contact;
+        $this->data['address'] = $record->address;
+        $this->data['longtext'] = $record->longtext;
+        $this->data['shorttext'] = $record->shorttext;
+        $this->data['most_popular'] = $record->most_popular_dish;
+        $this->data['single_room_rate'] = $record->single_room_rating;
+        $this->data['double_room_rate'] = $record->double_room_rating;
 
         $this->render();
     }
@@ -56,41 +85,85 @@ class Admin extends Application {
     function post($id) {
         $this->data['pagebody'] = 'edit';
 
-        $name = check_input($_POST['name']);
-        $category = check_input($_POST['category']);
-        $image1 = check_input($_POST['image1']);
-        $image2 = check_input($_POST['image2']);
-        $image3 = check_input($_POST['image3']);
-        $longtext = check_input($_POST['longtext']);
-        $shorttext = check_input($_POST['shorttext']);
-        $contact = check_input($_POST['contact']);
-        $address = check_input($_POST['address']);
-        $most_popular = check_input($_POST['most_popular']);
-        $single_room_rate = check_input($_POST['single_room_rate']);
-        $double_room_rate = check_input($_POST['double_room_rate']);
+        $config['upload_path'] = 'data';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|pdf|doc|xml';
+        $config['overwrite'] = 'TRUE';
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('upload', $config);
 
-        $sql = mysql_query("UPDATE attractions SET "
-                . "name = '$name'"
-                . ",category ='$category'"
-                . ",image1 ='$image1'"
-                . ",image2 ='$image2'"
-                . ",image3 ='$image3'"
-                . ",category ='$image3'"
-                . ",longtext ='$longtext'"
-                . ",shorttext ='$shorttext'"
-                . ",contact ='$contact'"
-                . ",address ='$address'"
-                . ",most_popular ='$most_popular'"
-                . ",single_room_rate ='$single_room_rate'"
-                . ",double_room_rate = '$double_room_rate' WHERE _id = '$id'");
-                
-        $record = $this->attractions->getByID($id);
-        $this->data = array_merge($this->data, $record);
 
-        $this->render();
+
+        if (empty($_POST['name'])) {
+            $this->errors [] = 'Name cannot be left blank';
+            $_POST['name'] = 'Please_set_a_Name';
+        }
+
+        if (sizeof($this->errors) > 0) {
+            $to_update = $this->attractions->get($id);
+            $session_record = $this->session->userdata('item');
+//            $session_record->id = $id;
+//            $session_record->name = $_POST['name'];
+//            $session_record->category = $_POST['category'];
+//            if (!empty($_POST['image1']))
+//                $session_record->image = $_POST['image1'];
+//            if (!empty($_POST['image2']))
+//                $session_record->image2 = $_POST['image2'];
+//            if (!empty($_POST['image3']))
+//                $session_record->image3 = $_POST['image3'];
+//            $session_record->longtext = $_POST['longtext'];
+//            $session_record->shorttext = $_POST['shorttext'];
+//            $session_record->contact = $_POST['contact'];
+//            $session_record->address = $_POST['address'];
+//            $session_record->most_popular = $_POST['most_popular'];
+//            $session_record->single_room_rate = $_POST['single_room_rate'];
+//            $session_record->double_room_rate = $_POST['double_room_rate'];
+
+            $this->edit($id);
+        } else {
+            $to_update = $this->attractions->getByID($id);
+            $to_update->name = $_POST['name'];
+            $to_update->category = $_POST['category'];
+
+
+
+            if ($this->upload->do_upload('image1')) {
+                $to_update->image1 = $_FILES['image1']['name'];
+            }
+            
+            if ($this->upload->do_upload('image2')) {
+                $to_update->image1 = $_FILES['image2']['name'];
+            }
+
+            if ($this->upload->do_upload('image3')) {
+                $to_update->image1 = $_FILES['image3']['name'];
+            }
+
+
+
+
+            $to_update->longtext = $_POST['longtext'];
+            $to_update->shorttext = $_POST['shorttext'];
+            $to_update->contact = $_POST['contact'];
+            $to_update->address = $_POST['address'];
+            $to_update->most_popular_dish = $_POST['most_popular'];
+            $to_update->single_room_rating = $_POST['single_room_rate'];
+            $to_update->double_room_rating = $_POST['double_room_rate'];
+
+
+            $this->attractions->update($to_update);
+            $this->session->unset_userdata('item');
+            redirect("/admin/edit/$id");
+
+
+            $this->render();
+        }
     }
 
     function delete($id) {
+        //need to work on this, havn't tried
+        $this->attractions->delete('id', $id);
+        $record = $this->attractions->get($id);
+        
         $this->render();
     }
 
