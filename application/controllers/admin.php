@@ -77,6 +77,28 @@ class Admin extends Application {
             $this->data['single_room_rate'] = $record->single_room_rating;
             $this->data['double_room_rate'] = $record->double_room_rating;
 
+//            $this->load->helper('formfields');
+//            
+//            $this->data['fid'] = makeTextField('Code:', 'code', $record->id, "Item code, uniquelly identifies item", 10, 10, true);
+//            $this->data['fname'] = makeTextField('Name:', 'name', $record->name, "Item name, name recognizable to customers", 10, 10);
+//            $this->data['flongtext'] = makeTextArea('Description:', 'description', $record->longtext, "Item description, essentially marketing", 255, 40, 5, false);
+//            //Set selected combofield value, then create dropdown list
+//            $selected = null;
+//            switch ($record->category) {
+//                case 'eat':
+//                    $selected = 0;
+//                    break;
+//                case 'play':
+//                    $selected = 1;
+//                    break;
+//                case 'sleep':
+//                    $selected = 2;
+//                    break;
+//            }
+//            $this->data['fcategory'] = makeComboField('Category:', 'category', $selected, array('eat', 'play', 'sleep'), 'The menu categories', 40, 40, false);
+//
+//            $this->data['fsubmit'] = makeSubmitButton('Submit Changes', 'Submit', 'btn btn-large btn-primary');
+
             $this->render();
         } else {
             $this->data['id'] = $id;
@@ -108,7 +130,7 @@ class Admin extends Application {
 
         if (empty($_POST['name'])) {
             $this->errors[] = 'Name cannot be left blank';
-            $_POST['name'] = 'Please_set_a_Name';
+            //$_POST['name'] = 'Please_set_a_Name';
         }
 
         if (sizeof($this->errors) > 0) {
@@ -135,7 +157,7 @@ class Admin extends Application {
         } else {
             if ($this->attractions->exists($id))
                 $to_update = $this->attractions->getByID($id);
-                
+
             $to_update->name = $_POST['name'];
             $to_update->category = $_POST['category'];
 
@@ -158,28 +180,31 @@ class Admin extends Application {
             $to_update->most_popular_dish = $_POST['most_popular'];
             $to_update->single_room_rating = $_POST['single_room_rate'];
             $to_update->double_room_rating = $_POST['double_room_rate'];
-            $to_update->date = date('Y/m/d h:i:s', time());
-        } 
-        
-        // check if update or create
-        if ($this->attractions->exists($id)) {
-            $this->attractions->update($to_update);
-            $this->session->unset_userdata('item');
-            redirect("/admin");
-        } else {
-            $to_update->id = $id;
-            $this->attractions->add($to_update);
-            redirect("/admin");
+
+            // check if update or create
+            if ($this->attractions->exists($id)) {
+                $this->attractions->update($to_update);
+                $this->session->unset_userdata('item');
+                redirect("/admin");
+            } else {
+                $to_update->id = $id;
+                // date will be for when attraction is added
+                $to_update->date = date('Y/m/d h:i:s', time());
+                $this->attractions->add($to_update);
+                redirect("/admin");
+            }
         }
     }
 
     // start a new attraction
     function newAttraction() {
-        $order_num = $this->attractions->highest() + 1;
-
-        redirect('/admin/edit/' . $order_num);
+        // get an id number for a new attraction
+        $id = $this->attractions->highest() + 1;
+        // redirect to edit form with the new id
+        redirect('/admin/edit/' . $id);
     }
 
+    // delete
     function delete($id) {
         $this->data['pagebody'] = 'admin';
         $record = $this->attractions->get($id);
