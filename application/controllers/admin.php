@@ -25,16 +25,16 @@ class Admin extends Application {
                 'id' => $record->id
                 , 'category' => $record->category
                 , 'name' => $record->name
-                , 'image1' => $record->image1
-                , 'image2' => $record->image2
-                , 'image3' => $record->image3
-                , 'longtext' => $record->longtext
-                , 'shorttext' => $record->shorttext
-                , 'contact' => $record->contact
-                , 'address' => $record->address
-                , 'most_popular' => $record->most_popular_dish
-                , 'single_room_rate' => $record->single_room_rating
-                , 'double_room_rate' => $record->double_room_rating
+//                , 'image1' => $record->image1
+//                , 'image2' => $record->image2
+//                , 'image3' => $record->image3
+//                , 'longtext' => $record->longtext
+//                , 'shorttext' => $record->shorttext
+//                , 'contact' => $record->contact
+//                , 'address' => $record->address
+//                , 'most_popular' => $record->most_popular_dish
+//                , 'single_room_rate' => $record->single_room_rating
+//                , 'double_room_rate' => $record->double_room_rating
                 , 'date' => $record->date
             );
         }
@@ -46,40 +46,55 @@ class Admin extends Application {
     function edit($id) {
         $this->data['pagebody'] = 'edit';
 
+        if ($this->attractions->exists($id)) {
+            $record = $this->attractions->get($id);
 
-        $record = $this->attractions->get($id);
+            $this->load->library('session');
+            //use "item" as session key
+            //assume no item record in-progress
+            if (!$this->session->userdata('item')) {
+                $this->session->set_userdata('item', $record);
+            } else {
+                $item = $this->session->userdata('item');
 
-        $this->load->library('session');
-        //use "item" as session key
-        //assume no item record in-progress
-        if (!$this->session->userdata('item')) {
-            $this->session->set_userdata('item', $record);
-        } else {
-            $item = $this->session->userdata('item');
+                if ($record->id == $item->id) {
 
-            if ($record->id == $item->id) {
-
-                $record = $this->session->userdata('item');
+                    $record = $this->session->userdata('item');
+                }
             }
+
+            $this->data['id'] = $record->id;
+            $this->data['category'] = $record->category;
+            $this->data['name'] = $record->name;
+            $this->data['image'] = $record->image1;
+            $this->data['image2'] = $record->image2;
+            $this->data['image3'] = $record->image3;
+            $this->data['contact'] = $record->contact;
+            $this->data['address'] = $record->address;
+            $this->data['longtext'] = $record->longtext;
+            $this->data['shorttext'] = $record->shorttext;
+            $this->data['most_popular'] = $record->most_popular_dish;
+            $this->data['single_room_rate'] = $record->single_room_rating;
+            $this->data['double_room_rate'] = $record->double_room_rating;
+
+            $this->render();
+        } else {
+            $this->data['id'] = $id;
+            $this->data['category'] = "";
+            $this->data['name'] = "";
+            $this->data['image'] = "default.jpg";
+            $this->data['image2'] = "default.jpg";
+            $this->data['image3'] = "default.jpg";
+            $this->data['contact'] = "";
+            $this->data['address'] = "";
+            $this->data['longtext'] = "";
+            $this->data['shorttext'] = "";
+            $this->data['most_popular'] = "";
+            $this->data['single_room_rate'] = "";
+            $this->data['double_room_rate'] = "";
+
+            $this->render();
         }
-
-
-
-        $this->data['id'] = $record->id;
-        $this->data['category'] = $record->category;
-        $this->data['name'] = $record->name;
-        $this->data['image'] = $record->image1;
-        $this->data['image2'] = $record->image2;
-        $this->data['image3'] = $record->image3;
-        $this->data['contact'] = $record->contact;
-        $this->data['address'] = $record->address;
-        $this->data['longtext'] = $record->longtext;
-        $this->data['shorttext'] = $record->shorttext;
-        $this->data['most_popular'] = $record->most_popular_dish;
-        $this->data['single_room_rate'] = $record->single_room_rating;
-        $this->data['double_room_rate'] = $record->double_room_rating;
-
-        $this->render();
     }
 
     function post($id) {
@@ -91,10 +106,8 @@ class Admin extends Application {
         $this->load->helper(array('form', 'url'));
         $this->load->library('upload', $config);
 
-
-
         if (empty($_POST['name'])) {
-            $this->errors [] = 'Name cannot be left blank';
+            $this->errors[] = 'Name cannot be left blank';
             $_POST['name'] = 'Please_set_a_Name';
         }
 
@@ -120,11 +133,11 @@ class Admin extends Application {
 
             $this->edit($id);
         } else {
-            $to_update = $this->attractions->getByID($id);
+            if ($this->attractions->exists($id))
+                $to_update = $this->attractions->getByID($id);
+                
             $to_update->name = $_POST['name'];
             $to_update->category = $_POST['category'];
-
-
 
             if ($this->upload->do_upload('image1')) {
                 $to_update->image1 = $_FILES['image1']['name'];
@@ -138,9 +151,6 @@ class Admin extends Application {
                 $to_update->image3 = $_FILES['image3']['name'];
             }
 
-
-
-
             $to_update->longtext = $_POST['longtext'];
             $to_update->shorttext = $_POST['shorttext'];
             $to_update->contact = $_POST['contact'];
@@ -148,31 +158,24 @@ class Admin extends Application {
             $to_update->most_popular_dish = $_POST['most_popular'];
             $to_update->single_room_rating = $_POST['single_room_rate'];
             $to_update->double_room_rating = $_POST['double_room_rate'];
-
-
+            $to_update->date = date('Y/m/d h:i:s', time());
+        } 
+        
+        // check if update or create
+        if ($this->attractions->exists($id)) {
             $this->attractions->update($to_update);
             $this->session->unset_userdata('item');
-            redirect("/admin/edit/$id");
-
-
-            $this->render();
+            redirect("/admin");
+        } else {
+            $to_update->id = $id;
+            $this->attractions->add($to_update);
+            redirect("/admin");
         }
     }
-    
-        // start a new order
+
+    // start a new attraction
     function newAttraction() {
-        /* create a new order */
-        $record = $this->attractions->create();
-        
-        /* set order number of created record to one greater than highest */
         $order_num = $this->attractions->highest() + 1;
-        $record->id = $order_num;
-        
-        /* set date to current time and status to open (a) */
-        $record->date = date('Y/m/d h:i:s', time());
-        
-        /* add record */
-        $this->attractions->add($record);
 
         redirect('/admin/edit/' . $order_num);
     }
