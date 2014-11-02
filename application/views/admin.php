@@ -6,7 +6,7 @@
             <div class="panel-heading">Attractions</div>
 
             <!-- Table -->
-            <table class="table">
+            <table class="table table-condensed table-hover">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
