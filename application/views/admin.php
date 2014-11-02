@@ -1,6 +1,6 @@
 <div id="page-content-wrapper">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row col-xs-12">
             
             <div class="panel panel-default">
             <div class="panel-heading">Attractions</div>
@@ -43,3 +43,4 @@
     </div>
 </div>
 
+</div>

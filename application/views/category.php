@@ -6,7 +6,7 @@
                 {attractions}
 
                 <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
-                    <div class="col-lg-offset-0 inner-button grow">
+                    <div class="col-lg-offset-0 inner-button grow greyLayer">
                       
                             <a href="{category}/single/{id}">
                                 <img src="/data/{image}" title="{name}" class="img-responsive"/>

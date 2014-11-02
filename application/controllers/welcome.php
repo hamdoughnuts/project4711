@@ -22,6 +22,7 @@ class Welcome extends Application {
         $this->data['id'] = $recent->id;
         $this->data['category'] = $recent->category;
         $this->data['banner'] = $recent->image1;
+        $this->data['name'] = $recent->name;
 
         //echo var_dump($recent);
         $this->render();

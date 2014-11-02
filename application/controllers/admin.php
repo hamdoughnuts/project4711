@@ -129,7 +129,7 @@ class Admin extends Application {
             if ($this->upload->do_upload('image1')) {
                 $to_update->image1 = $_FILES['image1']['name'];
             }
-            
+
             if ($this->upload->do_upload('image2')) {
                 $to_update->image1 = $_FILES['image2']['name'];
             }
@@ -160,11 +160,17 @@ class Admin extends Application {
     }
 
     function delete($id) {
-        //need to work on this, havn't tried
-        $this->attractions->delete('id', $id);
+        $this->data['pagebody'] = 'admin';
         $record = $this->attractions->get($id);
-        
-        $this->render();
+        $this->attractions->delete($record->id);
+
+        if (file_exists(FCPATH . 'data/' . $record->image1))
+            unlink(FCPATH . 'data/' . $record->image1);
+        if (file_exists(FCPATH . 'data/' . $record->image2))
+            unlink(FCPATH . 'data/' . $record->image2);
+        if (file_exists(FCPATH . 'data/' . $record->image3))
+            unlink(FCPATH . 'data/' . $record->image3);
+        redirect('admin');
     }
 
 }

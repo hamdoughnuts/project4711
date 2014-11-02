@@ -6,12 +6,12 @@
 
 .cat-divs {
     padding-bottom: 30px;
-    opacity : .85;
+    opacity : 1;
 }
 
 .cat-divs:hover {
     opacity : 1;
-            filter: alpha(opacity=40);
+    filter: alpha(opacity=40);
 }
 
 .inner-cat-divs{
@@ -64,12 +64,11 @@ body {
 .showme{ 
     display: none;
     color:white;
-    background-color:rgba(0, 0, 0, 0.5);
-    font-size: 20px;
+    z-index: 9999;
+    font-size: 35px;
     width:100%;
-
     position:absolute;
-    top:0px;   
+    top:15px;   
 
 }
 
@@ -83,11 +82,10 @@ body {
     color:lightgray;
 }
 .whiteBox{
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.6);
 }
 .inner-button:hover .showme {
     display : block;
-
 }
 #imagelightbox
 {
@@ -101,7 +99,7 @@ body {
     max-height:200px;
 }
 .greyLayer :hover:after {
-    content: ' ';
+    content: '';
     position: absolute;
     left: 0;
     right: 0;

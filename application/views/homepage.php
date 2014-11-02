@@ -1,11 +1,18 @@
 <!-- Page Content -->
 
 <!-- Most recent  -->
-
-<div class="col-lg-6 col-lg-offset-3 greyLayer grow" id="recent-div">
+<a href="{category}/{id}">
+<div class="col-lg-6 col-lg-offset-3 greyLayer top-buffer">
     
-    <a href="{category}/{id}"><img src="/data/{banner}" title="{name}" class="img-responsive"/></a>
+    <div class="inner-button grow">
+            
+                <img src="/data/{banner}" title="{name}" class="img-responsive"/>
+                <div class="showme">{name}</div>
+            
+
+    </div>
 </div>
+    </a>
 <!-- End most recent-->
 
 <div id="page-content-wrapper">
@@ -13,7 +20,7 @@
         <div class="row">
             <div id="eat-play-sleep" class="col-lg-12 top-buffer">
                 <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
-                    <div class="col-lg-offset-0 inner-button grow">
+                    <div class="col-lg-offset-0 inner-button grow greyLayer">
                         <a href="sleep">
                             <a href="sleep"><img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
 
@@ -24,7 +31,7 @@
                     </div>
                 </div>
                 <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
-                    <div class="col-lg-offset-0 inner-button grow">
+                    <div class="col-lg-offset-0 inner-button grow greyLayer">
                         <a href="sleep">
                             <a href="sleep"><img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
 
@@ -35,7 +42,7 @@
                     </div>
                 </div>
                 <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
-                    <div class="col-lg-offset-0 inner-button grow">
+                    <div class="col-lg-offset-0 inner-button grow greyLayer">
                         <a href="sleep">
                             <a href="sleep"><img class="img-responsive" src="/data/sleep.jpg" title="SLEEP"/>
 
