@@ -86,6 +86,7 @@ body {
 }
 .inner-button:hover .showme {
     display : block;
+    
 }
 #imagelightbox
 {
@@ -106,5 +107,5 @@ body {
     top: 0;
     bottom: 0;
     background-color: rgba(0,0,0,.5);
-
+    
 }
