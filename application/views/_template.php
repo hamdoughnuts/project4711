@@ -45,6 +45,7 @@ if (!defined('APPPATH'))
             </div>
 
             <div id="content">
+                <div class="{alerting} white whiteBox">{errormessages}</div>
                 {content}
             </div>
 

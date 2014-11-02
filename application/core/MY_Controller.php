@@ -26,7 +26,18 @@ class Application extends CI_Controller {
         $this->errors = array();
         $this->data['pageTitle'] = 'welcome';   // our default page
     }
-
+    function scold() {
+        $result = '';
+        if (count($this->errors) < 1) {
+            $this->data['alerting'] = '';
+        } else {
+            $this->data['alerting'] = 'alert alert-errors';
+            foreach ($this->errors as $msg) {
+                $result .= $msg . '<br/>';
+            }
+        }
+        return $result;
+    }
     /**
      * Render this page
      */
@@ -35,6 +46,7 @@ class Application extends CI_Controller {
         $this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
 
         // finally, build the browser page!
+        $this->data['errormessages'] = $this->scold();
         $this->data['data'] = &$this->data;
         $this->parser->parse('_template', $this->data);
     }

@@ -6,7 +6,7 @@
                 <a href="/admin/newAttraction">Create new attraction</a>
                 <div class="panel-heading">Attractions</div>
 
-
+               
                 <!-- Table -->
                 <table class="table table-condensed table-hover">
                     <tr>

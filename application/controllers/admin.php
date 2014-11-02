@@ -95,21 +95,42 @@ class Admin extends Application {
 
         if (empty($_POST['name'])) {
             $this->errors [] = 'Name cannot be left blank';
-            $_POST['name'] = 'Please_set_a_Name';
         }
-
+        if(empty($_POST['category'])){
+            $this->errors [] = 'Category must not be empty';
+            }
+            if($_POST['category'] != 'eat' || $_POST['category'] != 'play' ||$_POST['category'] != 'sleep'){
+                $this->errors [] = 'Category must be "eat", "sleep", or "play"';
+            }
+        
+        if(empty($_POST['longtext']))
+            $this->errors [] = "Theres got to be something to say about this attraction, long text cannot be left empty";
+        if(empty($_POST['shorttext']))
+            $this->errors [] = "Theres got to be something to say about this attraction, short text cannot be left empty";
+        if(empty($_POST['contact']))
+            $this->errors [] = "Contact cannot be left empty";
+        if(empty($_POST['address']))
+            $this->errors [] = "Address cannot be left empty";
+        
         if (sizeof($this->errors) > 0) {
             $to_update = $this->attractions->get($id);
+
             $session_record = $this->session->userdata('item');
 //            $session_record->id = $id;
 //            $session_record->name = $_POST['name'];
 //            $session_record->category = $_POST['category'];
 //            if (!empty($_POST['image1']))
-//                $session_record->image = $_POST['image1'];
+//                $session_record->image1 = $_POST['image1'];
+//            else
+//                $session_record->image1 = $to_update->image1;
 //            if (!empty($_POST['image2']))
 //                $session_record->image2 = $_POST['image2'];
+//            else
+//                $session_record->image2 = $to_update->image2;
 //            if (!empty($_POST['image3']))
 //                $session_record->image3 = $_POST['image3'];
+//            else
+//                $session_record->image3 = $to_update->image3;
 //            $session_record->longtext = $_POST['longtext'];
 //            $session_record->shorttext = $_POST['shorttext'];
 //            $session_record->contact = $_POST['contact'];
@@ -137,10 +158,6 @@ class Admin extends Application {
             if ($this->upload->do_upload('image3')) {
                 $to_update->image3 = $_FILES['image3']['name'];
             }
-
-
-
-
             $to_update->longtext = $_POST['longtext'];
             $to_update->shorttext = $_POST['shorttext'];
             $to_update->contact = $_POST['contact'];
@@ -190,5 +207,5 @@ class Admin extends Application {
             unlink(FCPATH . 'data/' . $record->image3);
         redirect('admin');
     }
-
+    //displays the error messages
 }
