@@ -258,7 +258,7 @@ class MY_Model extends CI_Model implements Active_Record {
         $query = $this->db->get($this->_tableName);
         $result = $query->result();
         if (count($result) > 0)
-            return $result[0]->num;
+            return $result[0]->id;
         else
             return null;
     }

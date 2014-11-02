@@ -57,7 +57,7 @@ class Admin extends Application {
         } else {
             $item = $this->session->userdata('item');
 
-            if ($record->code == $item->code) {
+            if ($record->id == $item->id) {
 
                 $record = $this->session->userdata('item');
             }
@@ -131,11 +131,11 @@ class Admin extends Application {
             }
 
             if ($this->upload->do_upload('image2')) {
-                $to_update->image1 = $_FILES['image2']['name'];
+                $to_update->image2 = $_FILES['image2']['name'];
             }
 
             if ($this->upload->do_upload('image3')) {
-                $to_update->image1 = $_FILES['image3']['name'];
+                $to_update->image3 = $_FILES['image3']['name'];
             }
 
 
@@ -157,6 +157,24 @@ class Admin extends Application {
 
             $this->render();
         }
+    }
+    
+        // start a new order
+    function newAttraction() {
+        /* create a new order */
+        $record = $this->attractions->create();
+        
+        /* set order number of created record to one greater than highest */
+        $order_num = $this->attractions->highest() + 1;
+        $record->id = $order_num;
+        
+        /* set date to current time and status to open (a) */
+        $record->date = date('Y/m/d h:i:s', time());
+        
+        /* add record */
+        $this->attractions->add($record);
+
+        redirect('/admin/edit/' . $order_num);
     }
 
     function delete($id) {
