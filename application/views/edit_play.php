@@ -77,26 +77,6 @@
                         </div>
                     </div>
                     
-                                <div class="form-group">
-                        <label for="most_popular" class="col-sm-2 control-label white">Most Popular</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" name="most_popular" id="most_popular" value="{most_popular}"/>
-                        </div>
-                    </div>
-                    
-                                <div class="form-group">
-                        <label for="single_room_rate" class="col-sm-2 control-label white">Single Room Rate</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" name="single_room_rate" id="single_room_rate" value="{single_room_rate}">
-                        </div>
-                    </div>
-                                <div class="form-group">
-                        <label for="double_room_rate" class="col-sm-2 control-label white">Double Room Rate</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" name="double_room_rate" id="double_room_rate" value="{double_room_rate}">
-                        </div>
-                    </div>
-                    
                     <div class="form-group">
                         <label for="entrance_fee" class="col-sm-2 control-label white">Entrance fee</label>
                         <div class="col-sm-4">

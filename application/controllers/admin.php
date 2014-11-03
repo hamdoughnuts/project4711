@@ -33,7 +33,6 @@ class Admin extends Application {
 
     // renders an edit page for a single attraction
     function edit($id) {
-        $this->data['pagebody'] = 'edit';
         $this->load->library('session');
 
         // using "item" as the session key
@@ -64,20 +63,45 @@ class Admin extends Application {
             $this->session->set_userdata('item', $item_record);
         }
 
-        // set the view parameterss with the current item record
+        // set the view parameters with the current item record
         $this->data['id'] = $item_record->id;
         $this->data['category'] = $item_record->category;
         $this->data['name'] = $item_record->name;
-        $this->data['image'] = $item_record->image1;
-        $this->data['image2'] = $item_record->image2;
-        $this->data['image3'] = $item_record->image3;
+        
+        if ($item_record->image1 === "")
+            $this->data['image'] = "default.jpg";
+        else
+            $this->data['image'] = $item_record->image1;
+        
+        if ($item_record->image2 === "")
+            $this->data['image2'] = "default.jpg";
+        else
+            $this->data['image2'] = $item_record->image2;
+        
+        if ($item_record->image3 === "")
+            $this->data['image3'] = "default.jpg";
+        else
+            $this->data['image3'] = $item_record->image3;
+
         $this->data['contact'] = $item_record->contact;
         $this->data['address'] = $item_record->address;
         $this->data['longtext'] = $item_record->longtext;
         $this->data['shorttext'] = $item_record->shorttext;
         $this->data['most_popular'] = $item_record->most_popular_dish;
-        $this->data['single_room_rate'] = $item_record->single_room_rating;
-        $this->data['double_room_rate'] = $item_record->double_room_rating;
+        $this->data['single_room_rate'] = $item_record->single_room_rate;
+        $this->data['double_room_rate'] = $item_record->double_room_rate;
+        $this->data['entrance_fee'] = $item_record->entrance_fee;
+        
+        // check which category view to use
+        if ($this->data['category'] == 'eat') {
+            $this->data['pagebody'] = 'edit_eat';
+        } elseif ($this->data['category'] == 'play') {
+            $this->data['pagebody'] = 'edit_play';
+        } elseif ($this->data['category'] == 'sleep') {
+            $this->data['pagebody'] = 'edit_sleep';
+        } else {
+            $this->data['pagebody'] = 'edit';
+        }
         $this->render();
     }
 
@@ -102,9 +126,9 @@ class Admin extends Application {
             $this->errors[] = 'Category must be "eat", "sleep", or "play"';
         }
         if (empty($_POST['longtext']))
-            $this->errors[] = "Theres got to be something to say about this attraction, long text cannot be left empty";
+            $this->errors[] = "Long text cannot be left empty";
         if (empty($_POST['shorttext']))
-            $this->errors[] = "Theres got to be something to say about this attraction, short text cannot be left empty";
+            $this->errors[] = "Short text cannot be left empty";
         if (empty($_POST['contact']))
             $this->errors[] = "Contact cannot be left empty";
         if (empty($_POST['address']))
@@ -131,9 +155,18 @@ class Admin extends Application {
         $to_update->shorttext = $_POST['shorttext'];
         $to_update->contact = $_POST['contact'];
         $to_update->address = $_POST['address'];
-        $to_update->most_popular_dish = $_POST['most_popular'];
-        $to_update->single_room_rating = $_POST['single_room_rate'];
-        $to_update->double_room_rating = $_POST['double_room_rate'];
+        
+        // category specific fields
+        if ($to_update->category == 'eat')
+            $to_update->most_popular_dish = $_POST['most_popular'];
+        if ($to_update->category == 'sleep') {
+            $to_update->single_room_rate = $_POST['single_room_rate'];
+            $to_update->double_room_rate = $_POST['double_room_rate'];
+        }
+        if ($to_update->category == 'play') {
+            $to_update->entrance_fee = $_POST['entrance_fee'];
+        }
+        
         // update the session item
         $this->session->set_userdata('item', $to_update);
 
@@ -188,7 +221,7 @@ class Admin extends Application {
         if (file_exists(FCPATH . 'data/' . $record->image3))
             unlink(FCPATH . 'data/' . $record->image3);
 
-        $this->render();
+        redirect('/admin/');
     }
 
 }

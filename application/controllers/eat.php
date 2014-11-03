@@ -38,7 +38,7 @@ class Eat extends Application {
      */
 
     function single($id) {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        $this->data['pagebody'] = 'eat';    // this is the view we want shown
 
         $record = $this->attractions->getByID($id);
         //$this->data = array_merge($this->data, $record);
@@ -50,6 +50,7 @@ class Eat extends Application {
         $this->data['address'] = $record->address;
         $this->data['longtext'] = $record->longtext;
         $this->data['shorttext'] = $record->shorttext;
+        $this->data['most_popular'] = $record->most_popular_dish;
         
         $this->render();
     }

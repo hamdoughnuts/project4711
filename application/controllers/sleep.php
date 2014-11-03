@@ -56,7 +56,7 @@ class Sleep extends Application {
      */
 
     function single($id) {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        $this->data['pagebody'] = 'sleep';    // this is the view we want shown
 
         $record = $this->attractions->getByID($id);
         //$this->data = array_merge($this->data, $record);
@@ -68,6 +68,9 @@ class Sleep extends Application {
         $this->data['address'] = $record->address;
         $this->data['longtext'] = $record->longtext;
         $this->data['shorttext'] = $record->shorttext;
+        $this->data['shorttext'] = $record->shorttext;
+        $this->data['single_room_rate'] = $record->single_room_rate;
+        $this->data['double_room_rate'] = $record->double_room_rate;
         $this->render();
     }
 
