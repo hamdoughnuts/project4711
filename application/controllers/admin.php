@@ -168,7 +168,7 @@ class Admin extends Application {
         // get an id number for a new attraction
         $id = $this->attractions->highest() + 1;
         // redirect to edit form with the new id
-        redirect('/admin/edit/' . $id);
+        $this->edit($id);
     }
 
     // deletes an attraction from the db table
