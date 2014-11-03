@@ -1,6 +1,6 @@
 <div id="page-content-wrapper">
     <div class="container-fluid whiteBox">
-                <form class="form-horizontal" role="form" action="../post/{id}" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" role="form" action="/admin/post/{id}" method="POST" enctype="multipart/form-data">
                     <h1 class="white">Edit Form</h1>
         
                     <div class="form-group">

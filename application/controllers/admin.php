@@ -145,7 +145,7 @@ class Admin extends Application {
                 $this->attractions->update($to_update);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
-                redirect("/admin");
+                redirect('/admin');
             } else {
                 // set id
                 $to_update->id = $id;
@@ -155,11 +155,11 @@ class Admin extends Application {
                 $this->attractions->add($to_update);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
-                redirect("/admin");
+                redirect('/admin');
             }
         } else {
             // update or create is not ok redirect to edit page
-            $this->edit($id);
+            redirect('/admin/edit/' . $id);
         }
     }
 
@@ -168,7 +168,7 @@ class Admin extends Application {
         // get an id number for a new attraction
         $id = $this->attractions->highest() + 1;
         // redirect to edit form with the new id
-        $this->edit($id);
+        redirect('/admin/edit/' . $id);
     }
 
     // deletes an attraction from the db table
