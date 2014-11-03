@@ -13,11 +13,11 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Category</th>
-                        <th>Image 1</th>
+<!--                        <th>Image 1</th>
                         <th>Image 2</th>
                         <th>Image 3</th>
                         <th>Contact</th>
-                        <th>Address</th>
+                        <th>Address</th>-->
                         <th>Date</th>
                         <th></th>
                         <th></th>
@@ -27,11 +27,11 @@
                         <td>{id}</td>
                         <td>{name}</td>
                         <td>{category}</td>
-                        <td>{image1}</td>
+<!--                        <td>{image1}</td>
                         <td>{image2}</td>
                         <td>{image3}</td>
                         <td>{contact}</td>
-                        <td>{address}</td>
+                        <td>{address}</td>-->
                         <td>{date}</td>
                         <td><a href="admin/edit/{id}">Edit</a></td>
                         <td><a href="admin/delete/{id}">Delete</a></td>
@@ -43,6 +43,4 @@
 
         </div>
     </div>
-</div>
-
 </div>

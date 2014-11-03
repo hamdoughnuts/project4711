@@ -45,14 +45,15 @@ if (!defined('APPPATH'))
             </div>
 
             <div id="content">
-                <div class="{alerting} white whiteBox">{errormessages}</div>
+                <div class="{alerting} white whiteBox">
+                    {errormessages}
+                </div>
                 {content}
             </div>
 
             <div class="footer span12">
                 Copyright &copy; 2014, <a href="mailto:glo18@mybcit.ca">Germaine Lo</a> and <a href="mailto:dtran54@mybcit.ca">Danny
                     Tran</a>.
-                <a href="/admin">Admin</a>
             </div>
         </div>
         
