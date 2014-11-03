@@ -33,8 +33,8 @@
                         <td>{contact}</td>
                         <td>{address}</td>-->
                         <td>{date}</td>
-                        <td><a href="admin/edit/{id}">Edit</a></td>
-                        <td><a href="admin/delete/{id}">Delete</a></td>
+                        <td><a href="/admin/edit/{id}">Edit</a></td>
+                        <td><a href="/admin/delete/{id}">Delete</a></td>
                     </tr>
 
                     {/attractions}

@@ -103,12 +103,5 @@
                         </div>
                     </div>
                 </form>
-<!--        <form class="form-horizontal" role="form" action="../post/{id}" method="POST" enctype="multipart/form-data">
-            {fid}
-            {fname}
-            {flongtext}
-            {fcategory}
-            {fsubmit}
-        </form>-->
     </div>
 </div>

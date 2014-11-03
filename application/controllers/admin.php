@@ -92,23 +92,23 @@ class Admin extends Application {
 
         // validating fields
         if (empty($_POST['name'])) {
-            $this->errors [] = 'Name cannot be left blank';
+            $this->errors[] = 'Name cannot be left blank';
         }
         if (empty($_POST['category'])) {
-            $this->errors [] = 'Category must not be empty';
+            $this->errors[] = 'Category must not be empty';
         }
         $categories = array("eat", "sleep", "play");
         if (!in_array($_POST['category'], $categories)) {
-            $this->errors [] = 'Category must be "eat", "sleep", or "play"';
+            $this->errors[] = 'Category must be "eat", "sleep", or "play"';
         }
         if (empty($_POST['longtext']))
-            $this->errors [] = "Theres got to be something to say about this attraction, long text cannot be left empty";
+            $this->errors[] = "Theres got to be something to say about this attraction, long text cannot be left empty";
         if (empty($_POST['shorttext']))
-            $this->errors [] = "Theres got to be something to say about this attraction, short text cannot be left empty";
+            $this->errors[] = "Theres got to be something to say about this attraction, short text cannot be left empty";
         if (empty($_POST['contact']))
-            $this->errors [] = "Contact cannot be left empty";
+            $this->errors[] = "Contact cannot be left empty";
         if (empty($_POST['address']))
-            $this->errors [] = "Address cannot be left empty";
+            $this->errors[] = "Address cannot be left empty";
 
         // get the session item record
         $to_update = $this->session->userdata('item');
@@ -145,7 +145,7 @@ class Admin extends Application {
                 $this->attractions->update($to_update);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
-                redirect('/admin');
+                $this->index();
             } else {
                 // set id
                 $to_update->id = $id;
@@ -155,11 +155,11 @@ class Admin extends Application {
                 $this->attractions->add($to_update);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
-                redirect('/admin');
+                $this->index();
             }
         } else {
             // update or create is not ok redirect to edit page
-            redirect('/admin/edit/' . $id);
+            $this->edit($id);
         }
     }
 

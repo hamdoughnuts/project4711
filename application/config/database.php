@@ -48,7 +48,7 @@ if (!defined('BASEPATH'))
   | the active record class
  */
 
-$active_group = 'default';
+$active_group = ENVIRONMENT;
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
@@ -66,6 +66,18 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db[ENV_DEVLOPMENT] = $db['default'];
+
+$db[ENV_TESTING] = $db['default'];
+$db[ENV_TESTING]['username'] = 'root';
+$db[ENV_TESTING]['password'] = '';
+$db[ENV_TESTING]['database'] = 'bcitx762_c02';
+
+$db[ENV_PRODUCTION] = $db['default'];
+$db[ENV_PRODUCTION]['username'] = 'bcitx762_c02';
+$db[ENV_PRODUCTION]['password'] = 'T#Lq)OVs;k[=';
+$db[ENV_PRODUCTION]['database'] = 'bcitx762_c02';
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

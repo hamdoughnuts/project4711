@@ -18,7 +18,20 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-define('ENVIRONMENT', 'development');
+//define('ENVIRONMENT', 'development');
+
+define('ENV_DEVLOPMENT', 'development');
+define('ENV_TESTING', 'testing');
+define('ENV_PRODUCTION', 'production');
+
+if (strpos($_SERVER['SERVER_NAME'], 'testing') === true) {
+    define('ENVIRONMENT', ENV_TESTING);
+} elseif (strpos($_SERVER['SERVER_NAME'], '.com') > 0) {
+    define('ENVIRONMENT', ENV_PRODUCTION);
+} else {
+    define('ENVIRONMENT', ENV_DEVLOPMENT);
+}
+
 /*
  * ---------------------------------------------------------------
  * ERROR REPORTING

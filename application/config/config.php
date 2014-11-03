@@ -30,6 +30,7 @@ $config['menu_choices'] = array(
   |
  */
 $config['base_url'] = '';
+//$config['base_url'] = 'http://amsterdam.bcitxml.com/';
 
 /*
   |--------------------------------------------------------------------------
