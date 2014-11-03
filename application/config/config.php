@@ -29,8 +29,8 @@ $config['menu_choices'] = array(
   | path to your installation.
   |
  */
-$config['base_url'] = '';
-//$config['base_url'] = 'http://amsterdam.bcitxml.com/';
+//$config['base_url'] = '';
+$config['base_url'] = 'http://amsterdam.bcitxml.com/';
 
 /*
   |--------------------------------------------------------------------------

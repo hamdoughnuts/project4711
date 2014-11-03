@@ -24,11 +24,6 @@ class Attractions extends MY_Model {
     public function getByID($id) {
         $temp = $this->attractions->get($id);
         return $temp;
-        // iterate over the data until we find the one we want
-//        foreach ($this->data as $record)
-//            if ($record['id'] == $id)
-//                return $record;
-//        return null;
     }
 
     /*
@@ -44,13 +39,7 @@ class Attractions extends MY_Model {
      */
 
     public function getByCategory($category) {
-        
-        
         $records = $this->attractions->some('category', $category);
-//        // iterate over the data and find the ones matching category
-//        foreach ($this->data as $record)
-//            if ($record['category'] == $category)
-//                $records[] = $record;
         return $records;
     }
 
@@ -68,22 +57,4 @@ class Attractions extends MY_Model {
                 $temp = $record;
         return $temp;
     }
-
-    /*
-     * Retrieves the first attraction
-     */
-
-    public function getFirst() {
-        return $this->data[0];
-    }
-
-    /*
-     * Retrieves the last attraction
-     */
-
-    public function getLast() {
-        $index = count($this->data) - 1;
-        return $this->data[$index];
-    }
-
 }
