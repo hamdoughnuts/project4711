@@ -64,6 +64,8 @@ class Application extends CI_Controller {
         }
         
     }
+    //This function makes changes to the menu depending if the admin is logged
+    //in 
     function checkForAdmin(){
         $userRole = $this->session->userdata('userRole');
         if ($userRole == 'admin') {
