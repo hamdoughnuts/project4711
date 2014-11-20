@@ -4,6 +4,7 @@
 
             <div class="panel panel-default">
                 <a href="/admin/newAttraction">Create new attraction</a>
+                <a href="/logout">Logout</a>
                 <div class="panel-heading">Attractions</div>
 
 

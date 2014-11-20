@@ -10,7 +10,7 @@ $config['menu_choices'] = array(
         array('name' => 'PLAY', 'link' => '/play'),
         array('name' => 'SLEEP', 'link' => '/sleep'),
         array('name' => 'ABOUT', 'link' => '/about'),
-        array('name' => 'ADMIN', 'link' => '/admin'),
+        array('name' => 'ADMIN', 'link' => '/admin', 'class' => 'hide')
     )
 );
 
@@ -29,8 +29,8 @@ $config['menu_choices'] = array(
   | path to your installation.
   |
  */
-//$config['base_url'] = '';
-$config['base_url'] = 'http://amsterdam.bcitxml.com/';
+$config['base_url'] = '';
+//$config['base_url'] = 'http://amsterdam.bcitxml.com/';
 
 /*
   |--------------------------------------------------------------------------

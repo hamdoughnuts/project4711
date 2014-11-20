@@ -21,8 +21,8 @@
             <div id="eat-play-sleep" class="col-lg-12 top-buffer">
                 <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
                     <div class="col-lg-offset-0 inner-button grow greyLayer">
-                        <a href="sleep">
-                            <a href="sleep"><img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
+                        <a href="eat">
+                            <a href="eat"><img class="img-responsive" src="/data/eat.jpg" title="EAT"/>
 
                                 <div class="showme">EAT</div>
                             </a>
@@ -32,8 +32,8 @@
                 </div>
                 <div class="cat-divs col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sm-6">
                     <div class="col-lg-offset-0 inner-button grow greyLayer">
-                        <a href="sleep">
-                            <a href="sleep"><img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
+                        <a href="play">
+                            <a href="play"><img class="img-responsive" src="/data/play.jpg" title="PLAY"/>
 
                                 <div class="showme">PLAY</div>
                             </a>

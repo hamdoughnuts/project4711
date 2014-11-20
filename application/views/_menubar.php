@@ -11,6 +11,6 @@
     </li>
 
     {menudata}
-    <li><a href="{link}">{name}</a></li>
+    <li><a href="{link}" class="{class}">{name}</a></li>
     {/menudata}
 </ul>

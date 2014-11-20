@@ -9,6 +9,7 @@ class Welcome extends Application {
 
     function __construct() {
         parent::__construct();
+        $this->checkForAdmin();
     }
 
     /*
@@ -24,8 +25,10 @@ class Welcome extends Application {
         $this->data['banner'] = $recent->image1;
         $this->data['name'] = $recent->name;
 
+        $userRole = $this->session->userdata('userRole');
+        
         //echo var_dump($recent);
         $this->render();
     }
-
+    
 }
