@@ -7,8 +7,8 @@ class Login extends Application {
         $this->data['pagebody'] = 'login';
         $this->load->helper('formfields');
 
-        $this->data['fid'] = makeTextField('ID code', 'id', "", "", 10, 10, false, 'whiteWords');
-        $this->data['fpassword'] = makeTextField('Password', 'password', "", "", 32, 32, false, 'whiteWords');
+        $this->data['fid'] = makeTextField('Username', 'id', "", "", 20, 20, false, 'whiteWords');
+        $this->data['fpassword'] = makeTextField('Password', 'password', "", "", 20, 20, false, 'whiteWords');
         $this->data['fsubmit'] = makeSubmitButton('Login', 'logging in');
         $this->checkForAdmin();
         $this->render();
