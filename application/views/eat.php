@@ -33,9 +33,9 @@
             <br/>
             <span class="whiteWords"><b>Our most popular dish: {most_popular}</b></span>
             
-            <div class="fb-like" data-href="http://www.bcit.ca/" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
-            <div class="fb-share-button" data-href="http://www.bcit.ca/" data-layout="button_count"></div>
-            <div class="fb-follow" data-href="https://www.facebook.com/bcit.ca" data-width="5" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+            <div class="fb-like col-md-12" data-href="http://www.bcit.ca/" data-layout="standard" data-action="like" data-show-faces="true" data-share="false" data-colorscheme="dark"></div>
+            <div class="fb-share-button col-md-12" data-href="http://www.bcit.ca/" data-layout="button_count" data-colorscheme="dark"></div>
+            <div class="fb-follow col-md-12" data-href="https://www.facebook.com/bcit.ca"  data-colorscheme="dark" data-layout="standard" data-show-faces="true"></div>
         </div>
 
         <div class="col-md-12 top-buffer whiteBox">
