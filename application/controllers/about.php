@@ -8,6 +8,7 @@ class About extends Application {
 
     function __construct() {
         parent::__construct();
+        $this->checkForAdmin();
     }
 
     /*
@@ -16,6 +17,7 @@ class About extends Application {
 
     function index() {
         $this->data['pagebody'] = 'about';
+        
         $this->render();
     }
 

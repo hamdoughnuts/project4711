@@ -10,6 +10,7 @@ class Sleep extends Application {
 
     function __construct() {
         parent::__construct();
+        $this->checkForAdmin();
     }
 
     /*
@@ -30,6 +31,7 @@ class Sleep extends Application {
         }
         $this->data['attractions'] = $attractions;
 
+        
         $this->render();
     }
 
