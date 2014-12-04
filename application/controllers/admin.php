@@ -8,10 +8,17 @@ class Admin extends Application {
 
     function __construct() {
         parent::__construct();
+        $this->restrict(ADMIN);
+        $this->checkForAdmin();
     }
 
     // renders admin page showing the id, category, name and date added
     function index() {
+                //check if admin is logged in
+        $userRole = $this->session->userdata('userRole');
+        if ($userRole == null) {
+            redirect('/login');
+        }
         // this is the view we want shown
         $this->data['pagebody'] = 'admin';
 
@@ -26,7 +33,9 @@ class Admin extends Application {
                 , 'name' => $record->name
                 , 'date' => $record->date
             );
+               
         }
+        
         $this->data['attractions'] = $attractions;
         $this->render();
     }

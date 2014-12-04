@@ -10,6 +10,8 @@ class Eat extends Application {
 
     function __construct() {
         parent::__construct();
+        $this->checkForAdmin();
+        
     }
 
     /*
@@ -30,6 +32,8 @@ class Eat extends Application {
         }
         $this->data['attractions'] = $attractions;
 
+        
+        
         $this->render();
     }
 

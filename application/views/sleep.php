@@ -1,3 +1,5 @@
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547764505703a3e6" async="async"></script>
 
 <div class="container-fluid">
     <div class="row-fluid top-buffer">
@@ -31,6 +33,8 @@
         <div class="col-md-12 top-buffer whiteBox">
             <span class="whiteWords">{longtext}</span>
         </div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
 
     </div>
 </div>
