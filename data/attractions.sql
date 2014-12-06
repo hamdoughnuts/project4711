@@ -182,7 +182,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <shorttext>Discover the impact and history Van Gogh left on the world</shorttext>
     <contact>31 20 552 0000 </contact>
     <address>Prins Hendrikkade 108, 1011 AK </address>
-    <date></date>
+    <date>2014-10-31</date>
     <most_popular_dish></most_popular_dish>
     <single_room_rate></single_room_rate>
     <double_room_rate></double_room_rate>
