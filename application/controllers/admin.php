@@ -66,6 +66,9 @@ class Admin extends Application {
             // else create an item record with the id
             else {
                 $item_record = $this->attractionsdb->create();
+                /**
+                 * Working on this line because you are trying to create a new attraction
+                 */
                 $item_record['id'] = $id;
             }
             // save it as the “item” session object
@@ -244,6 +247,7 @@ class Admin extends Application {
         // get an id number for a new attraction
         $id = $this->attractionsdb->highest() + 1;
         // redirect to edit form with the new id
+        
         redirect('/admin/edit/' . $id);
     }
 
