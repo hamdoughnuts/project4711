@@ -61,15 +61,32 @@ class Admin extends Application {
         // if there is no item in the session
         if ($item_record == null) {
             // get the item record from the items model if it exists
-            if ($this->attractionsdb->exists($id))
+            if ($this->attractionsdb->exists($id)) {
                 $item_record = $this->attractionsdb->get__with_XML($id);
+                var_dump($item_record);
+            }
             // else create an item record with the id
             else {
                 $item_record = $this->attractionsdb->create();
                 /**
                  * Working on this line because you are trying to create a new attraction
                  */
+                // create was making an object, need to convert to array
+                $item_record = get_object_vars($item_record);
                 $item_record['id'] = $id;
+                $item_record['contact'] = null;
+                $item_record['address'] = null;
+                $item_record['longtext'] = null;
+                $item_record['date'] = null;
+                $item_record['shorttext'] = null;
+                $item_record['image1'] = null;
+                $item_record['image2'] = null;
+                $item_record['image3'] = null;
+                $item_record['most_popular_dish'] = null;
+                $item_record['single_room_rate'] = null;
+                $item_record['double_room_rate'] = null;
+                $item_record['entrance_fee'] = null;
+                var_dump($item_record);
             }
             // save it as the “item” session object
             $this->session->set_userdata('item', $item_record);
