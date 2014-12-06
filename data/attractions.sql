@@ -74,7 +74,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <images>
         <image>getto.jpg</image>
         <image>getto2.jpg</image>
-        <image>getto3.jpg</image>
+        <image>getto3.jpeg</image>
     </images>
     <longtext>Getto is a burger bar with a difference: each burger is named after a drag queen who performs there – keep an eye on the website if you\'re keen to catch an act. It describes itself as "an attitude-free zone, for gays, lesbians, bi, queers and straights". Relaxed and friendly, the bar staff mix great cocktails, and the interior has a chilled vibe. The burgers don\'t disappoint: try the Jennifer Hopelezz beef burger with guacamole and bacon, or the Dolly Bellefleur lamb burger with tzatziki and grilled courgette. They\'re served with chunky seasoned wedges and a mayo-heavy salad. And try the Gettopolitan – a cosmo made with Dutch Jenever liqueur.</longtext>
     <shorttext>A Burger bar with a difference, starting at €10, they open Tuesday-Thursday 4pm - 1am, Friday-Saturday 4pm - 2am, Sunday 4pm - Midnight</shorttext>
@@ -157,9 +157,9 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
 (6, 'Grand Hotel Amrath Amsterdam' , 'sleep', '<?xml version="1.0" encoding="UTF-8"?>
 <xml_desc>
     <images>
-        <image></image>
-        <image></image>
-        <image></image>
+        <image>amrath.jpg</image>
+        <image>amrath2.jpg</image>
+        <image>amrath3.jpg</image>
     </images>
     <longtext>Welcome to the Grand Hotel Amrath Amsterdam, the latest five star Deluxe hotel situated right in the heart of the city. The 165 spacious rooms and suites feature the latest in comfort, style and facilities, decorated in the Art Deco style of the building. The hotel was established in the monumental Shipping House and has splendid views over the Amsterdam canals and the river IJ.</longtext>
     <shorttext>5 Stars, 165 Rooms, build in 2007</shorttext>
@@ -210,7 +210,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <images>
         <image>heinekin.jpg</image>
         <image>heinekin2.jpg</image>
-        <image>heinekin3.jpg</image>
+        <image>heinekin3.JPG</image>
     </images>
     <longtext>There is something secretive about the taste of the world’s best beers and certainly Heineken pilsner belongs to this group. The brewery was established in Amsterdam in 1864 and today Heineken is a huge multinational company, one of the three largest beer producers in the world. Throughout its history, Heineken remained by and large family company, with Charlene de Carvalho-Heineken as its biggest stockholder and her husband Michel on the company’s board. Heineken rich and successful history has been presented in their old defunct brewery in Amsterdam, with several amusement park attractions added to the exhibit and renamed as Amsterdam Heineken Experience.</longtext>
     <shorttext>Come taste world class beer and be amazed.</shorttext>

@@ -23,15 +23,15 @@ class Admin extends Application {
         $this->data['pagebody'] = 'admin';
 
         // build the list of attractions, to pass on to our view
-        $source = $this->attractions->getAll();
+        $source = $this->attractionsdb->all_with_XML();
         $attractions = array();
 
         foreach ($source as $record) {
             $attractions[] = array(
-                'id' => $record->id
-                , 'category' => $record->category
-                , 'name' => $record->name
-                , 'date' => $record->date
+                'id' => $record['id']
+                , 'category' => $record['category']
+                , 'name' => $record['name']
+                , 'date' => $record['date']
             );
                
         }
@@ -62,44 +62,44 @@ class Admin extends Application {
         if ($item_record == null) {
             // get the item record from the items model if it exists
             if ($this->attractions->exists($id))
-                $item_record = $this->attractions->get($id);
+                $item_record = $this->attractionsdb->get__with_XML($id);
             // else create an item record with the id
             else {
-                $item_record = $this->attractions->create();
-                $item_record->id = $id;
+                $item_record = $this->attractionsdb->create();
+                $item_record['id'] = $id;
             }
             // save it as the “item” session object
             $this->session->set_userdata('item', $item_record);
         }
 
         // set the view parameters with the current item record
-        $this->data['id'] = $item_record->id;
-        $this->data['category'] = $item_record->category;
-        $this->data['name'] = $item_record->name;
+        $this->data['id'] = $item_record['id'];
+        $this->data['category'] = $item_record['category'];
+        $this->data['name'] = $item_record['name'];
         
-        if ($item_record->image1 === "")
+        if ($item_record['image1'] === "")
             $this->data['image'] = "default.jpg";
         else
-            $this->data['image'] = $item_record->image1;
+            $this->data['image'] = $item_record['image1'];
         
-        if ($item_record->image2 === "")
+        if ($item_record['image2'] === "")
             $this->data['image2'] = "default.jpg";
         else
-            $this->data['image2'] = $item_record->image2;
+            $this->data['image2'] = $item_record['image2'];
         
-        if ($item_record->image3 === "")
+        if ($item_record['image3'] === "")
             $this->data['image3'] = "default.jpg";
         else
-            $this->data['image3'] = $item_record->image3;
+            $this->data['image3'] = $item_record['image3'];
 
-        $this->data['contact'] = $item_record->contact;
-        $this->data['address'] = $item_record->address;
-        $this->data['longtext'] = $item_record->longtext;
-        $this->data['shorttext'] = $item_record->shorttext;
-        $this->data['most_popular'] = $item_record->most_popular_dish;
-        $this->data['single_room_rate'] = $item_record->single_room_rate;
-        $this->data['double_room_rate'] = $item_record->double_room_rate;
-        $this->data['entrance_fee'] = $item_record->entrance_fee;
+        $this->data['contact'] = $item_record['contact'];
+        $this->data['address'] = $item_record['address'];
+        $this->data['longtext'] = $item_record['longtext'];
+        $this->data['shorttext'] = $item_record['shorttext'];
+        $this->data['most_popular'] = $item_record['most_popular_dish'];
+        $this->data['single_room_rate'] = $item_record['single_room_rate'];
+        $this->data['double_room_rate'] = $item_record['double_room_rate'];
+        $this->data['entrance_fee'] = $item_record['entrance_fee'];
         
         // check which category view to use
         if ($this->data['category'] == 'eat') {
