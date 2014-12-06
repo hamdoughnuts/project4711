@@ -61,11 +61,14 @@ class Admin extends Application {
         // if there is no item in the session
         if ($item_record == null) {
             // get the item record from the items model if it exists
-            if ($this->attractions->exists($id))
+            if ($this->attractionsdb->exists($id))
                 $item_record = $this->attractionsdb->get__with_XML($id);
             // else create an item record with the id
             else {
                 $item_record = $this->attractionsdb->create();
+                /**
+                 * Working on this line because you are trying to create a new attraction
+                 */
                 $item_record['id'] = $id;
             }
             // save it as the “item” session object
@@ -145,36 +148,70 @@ class Admin extends Application {
 
         // get the session item record
         $to_update = $this->session->userdata('item');
+        
         // over-riding any edited fields in the session record
-        if ($this->attractions->exists($id))
-            $to_update = $this->attractions->getByID($id);
+        if ($this->attractionsdb->exists($id))
+            $to_update = $this->attractionsdb->get__with_XML($id);
 
-        $to_update->name = $_POST['name'];
-        $to_update->category = $_POST['category'];
+        $to_update['name'] = $_POST['name'];
+        $to_update['category'] = $_POST['category'];
+        
+        $image1 = $to_update['image1'];
+        $image2 = $to_update['image2'];
+        $image3 = $to_update['image3'];
+        
         if ($this->upload->do_upload('image1')) {
-            $to_update->image1 = $_FILES['image1']['name'];
+            $image1 = $_FILES['image1']['name'];
         }
         if ($this->upload->do_upload('image2')) {
-            $to_update->image2 = $_FILES['image2']['name'];
+            $image2 = $_FILES['image2']['name'];
         }
         if ($this->upload->do_upload('image3')) {
-            $to_update->image3 = $_FILES['image3']['name'];
+            $image3 = $_FILES['image3']['name'];
         }
-        $to_update->longtext = $_POST['longtext'];
-        $to_update->shorttext = $_POST['shorttext'];
-        $to_update->contact = $_POST['contact'];
-        $to_update->address = $_POST['address'];
-        
+        $longtext = $_POST['longtext'];
+        $shorttext = $_POST['shorttext'];
+        $contact = $_POST['contact'];
+        $address = $_POST['address'];
+        $most_popular_dish = "";
+        $single_room_rate = "";
+        $double_room_rate = "";
+        $entrance_fee = "";
         // category specific fields
-        if ($to_update->category == 'eat')
-            $to_update->most_popular_dish = $_POST['most_popular'];
-        if ($to_update->category == 'sleep') {
-            $to_update->single_room_rate = $_POST['single_room_rate'];
-            $to_update->double_room_rate = $_POST['double_room_rate'];
+        if ($to_update['category'] == 'eat')
+            $most_popular_dish = $_POST['most_popular'];
+        if ($to_update['category'] == 'sleep') {
+            $single_room_rate = $_POST['single_room_rate'];
+            $double_room_rate = $_POST['double_room_rate'];
         }
-        if ($to_update->category == 'play') {
-            $to_update->entrance_fee = $_POST['entrance_fee'];
+        if ($to_update['category'] == 'play') {
+            $entrance_fee = $_POST['entrance_fee'];
         }
+        //New STUFF
+        $xml_desc = '<?xml version="1.0" encoding="UTF-8"?>'.
+    '<xml_desc>'.
+        '<images>'.
+           '<image>'.$image1.'</image>'.
+            '<image>'.$image2.'</image>'.
+            '<image>'.$image3.'</image>'.
+        '</images>'.
+        '<longtext>'.$longtext.'</longtext>'.
+        '<shorttext>'.$shorttext.'</shorttext>'.
+        '<contact>'.$contact.'</contact>'.
+        '<address>'.$address.'</address>'.
+        '<date>'.date('Y/m/d h:i:s', time()).'</date>'.
+        '<most_popular_dish>'.$most_popular_dish.'</most_popular_dish>'.
+        '<single_room_rate>'.$single_room_rate.'</single_room_rate>'.
+        '<double_room_rate>'.$double_room_rate.'</double_room_rate>'.
+        '<entrance_fee>'.$entrance_fee.'</entrance_fee>'.
+    '</xml_desc>';
+        $to_update['xml_desc'] = $xml_desc;
+        $record['id'] = $to_update['id'];
+        $record['name'] = $to_update['name'];
+        $record['category'] = $to_update['category'];
+        $record['xml_desc'] = $xml_desc;
+        
+        //END OF NEW STUFF
         
         // update the session item
         $this->session->set_userdata('item', $to_update);
@@ -182,19 +219,19 @@ class Admin extends Application {
         // update or create if ok
         if (count($this->errors) < 1) {
             // check if updating
-            if ($this->attractions->exists($id)) {
+            if ($this->attractionsdb->exists($id)) {
                 // update record in db
-                $this->attractions->update($to_update);
+                $this->attractionsdb->update($record);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
                 $this->index();
             } else {
                 // set id
-                $to_update->id = $id;
+                $to_update['id'] = $id;
                 // date will be for when attraction is added
-                $to_update->date = date('Y/m/d h:i:s', time());
+                $to_update['date'] = date('Y/m/d h:i:s', time());
                 // add the attraction
-                $this->attractions->add($to_update);
+                $this->attractionsdb->add($to_update);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
                 $this->index();
@@ -208,8 +245,9 @@ class Admin extends Application {
     // start a new attraction
     function newAttraction() {
         // get an id number for a new attraction
-        $id = $this->attractions->highest() + 1;
+        $id = $this->attractionsdb->highest() + 1;
         // redirect to edit form with the new id
+        
         redirect('/admin/edit/' . $id);
     }
 
