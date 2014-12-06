@@ -244,11 +244,12 @@ class Admin extends Application {
                 $this->index();
             } else {
                 // set id
-                $to_update['id'] = $id;
+                $record['id'] = $id;
                 // date will be for when attraction is added
-                $to_update['date'] = date('Y/m/d h:i:s', time());
+                //$record['date'] = date('Y/m/d h:i:s', time());
                 // add the attraction
-                $this->attractionsdb->add($to_update);
+                // todo: fix this!!
+                $this->attractionsdb->add($record);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
                 $this->index();
