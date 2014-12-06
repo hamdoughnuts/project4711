@@ -16,14 +16,7 @@ class AttractionsDB extends MY_Model {
     
     //retrieve the different categories
     public function get_cats(){
-        $categories = array (
-                       array ('category' => 'Dining',
-                              'url'      => 'dining'),
-                       array ('category' => 'Lodging',
-                              'url'      => 'lodging'),
-                       array ('category' => 'Sights', 
-                               'url'     => 'sights')
-        );
+        $categories = array ('eat','sleep', 'play');
         
         //$categories_filtered = array_unique($categories['category']);
         return $categories;
@@ -40,12 +33,19 @@ class AttractionsDB extends MY_Model {
                         
             if ($record['category'] == $category){
                 $recordXML = simplexml_load_string($record['xml_desc']);
-                $records[] = array('_id' => $record['_id'], 'category' => $record['category'], 'name' => $record['name'],
-                                   'contact' => $recordXML->contact, 'location' => (string)$recordXML->location,
-                                   'description' => (string)$recordXML->description,'date_added' => (string)$recordXML->date_added,
-                                   'price' => $record['price_range'], 'caption' => (string)$recordXML->caption,
-                                   'image_url' => (string)$recordXML->images->image[0], 'images' => (array)$recordXML->images->image,
-                                   'specifics' => (array)$recordXML->specifics, 'target_audience' => $record['target_audience']);
+                $records[] = array('id' => $record['id'], 
+                    'category' => $record['category'], 
+                    'name' => $record['name'],
+                    'contact' => (string)$recordXML->contact, 
+                    'address' => (string)$recordXML->address,
+                    'longtext' => (string)$recordXML->longtext,
+                    'date' => (string)$recordXML->date,
+                    'shorttext' => (string)$recordXML->shorttext,
+                    'image1' => (string)$recordXML->images->image[0],
+                    'image2' => (string)$recordXML->images->image[1],
+                    'image3' => (string)$recordXML->images->image[2],
+                    'price_range' => $record['price_range'], 
+                    'target_audience' => $record['target_audience']);
                 $count++;
             }
         }
@@ -96,12 +96,20 @@ class AttractionsDB extends MY_Model {
         }
         //return $recent;
         $recentXML = simplexml_load_string($recent['xml_desc']);
-        return array('_id' => $recent['_id'], 'category' => $recent['category'], 'name' => $recent['name'],
-                                   'contact' => $recentXML->contact, 'location' => (string)$recentXML->location,
-                                   'description' => (string)$recentXML->description,'date_added' => (string)$recentXML->date_added,
-                                   'price' => $recent['price_range'], 'caption' => (string)$recentXML->caption,
-                                   'image_url' => (string)$recentXML->images->image[0], 'images' => (array)$recentXML->images->image,
-                                   'specifics' => (array)$recentXML->specifics, 'target_audience' => $recent['target_audience']);
+        
+        return array('id' => $recent['id'], 
+                    'category' => $recent['category'], 
+                    'name' => $recent['name'],
+                    'contact' => (string)$recentXML->contact, 
+                    'address' => (string)$recentXML->address,
+                    'longtext' => (string)$recentXML->longtext,
+                    'date' => (string)$recentXML->date,
+                    'shorttext' => (string)$recentXML->shorttext,
+                    'image1' => (string)$recentXML->images->image[0],
+                    'image2' => (string)$recentXML->images->image[1],
+                    'image3' => (string)$recentXML->images->image[2],
+                    'price_range' => $recent['price_range'], 
+                    'target_audience' => $recent['target_audience']);
     } 
     
     //override of the get one function from My_Model
@@ -113,13 +121,24 @@ class AttractionsDB extends MY_Model {
         foreach($recordXML->images->image as $image){
             $images[] = array('image' => $image);
         }
-        return array('_id' => $record['_id'], 'category' => $record['category'], 'name' => $record['name'],
-                    'contact' => (string)$recordXML->contact, 'location' => (string)$recordXML->location,
-                    'description' => (string)$recordXML->description,'date_added' => (string)$recordXML->date_added,
-                    'price' => $record['price_range'], 'caption' => (string)$recordXML->caption,
-                    'image_url' => (string)$recordXML->images->image[0], 'images' => $images,
-                    'specifics' => (array)$recordXML->specifics,
-                    'target_audience' => $record['target_audience']);
+        return array('id' => $record['id'], 
+                    'category' => $record['category'], 
+                    'name' => $record['name'],
+                    'contact' => (string)$recordXML->contact, 
+                    'address' => (string)$recordXML->address,
+                    'longtext' => (string)$recordXML->longtext,
+                    'date' => (string)$recordXML->date,
+                    'shorttext' => (string)$recordXML->shorttext,
+                    'image1' => (string)$recordXML->images->image[0],
+                    'image2' => (string)$recordXML->images->image[1],
+                    'image3' => (string)$recordXML->images->image[2],
+                    'price_range' => $record['price_range'], 
+                    'target_audience' => $record['target_audience'],
+                    'most_popular_dish' => (string)$recordXML->most_popular_dish,
+                    'single_room_rate' => (string)$recordXML->single_room_rate,
+                    'double_room_rate' => (string)$recordXML->double_room_rate,
+                    'entrance_fee' => (string)$recordXML->entrance_fee
+            );
         }
         
      //override of the all function to include the xml
@@ -132,13 +151,23 @@ class AttractionsDB extends MY_Model {
                 $images[] = array('image' => $image);
             }
                 
-             $records[] = array('_id' => $record['_id'], 'category' => $record['category'], 'name' => $record['name'],
-                    'contact' => (string)$recordXML->contact, 'location' => (string)$recordXML->location,
-                    'description' => (string)$recordXML->description,'date_added' => (string)$recordXML->date_added,
-                    'price' => $record['price_range'], 'caption' => (string)$recordXML->caption,
-                    'image_url' => (string)$recordXML->images->image[0], 'images' => $images,
-                    'specifics' => (array)$recordXML->specifics,
-                    'target_audience' => $record['target_audience']);
+             $records[] = array('id' => $record['id'], 
+                    'category' => $record['category'], 
+                    'name' => $record['name'],
+                    'contact' => (string)$recordXML->contact, 
+                    'address' => (string)$recordXML->address,
+                    'longtext' => (string)$recordXML->longtext,
+                    'date' => (string)$recordXML->date,
+                    'shorttext' => (string)$recordXML->shorttext,
+                    'image1' => (string)$recordXML->images->image[0],
+                    'image2' => (string)$recordXML->images->image[1],
+                    'image3' => (string)$recordXML->images->image[2],
+                    'price_range' => $record['price_range'], 
+                    'target_audience' => $record['target_audience'],
+                    'most_popular_dish' => (string)$recordXML->most_popular_dish,
+                    'single_room_rate' => (string)$recordXML->single_room_rate,
+                    'double_room_rate' => (string)$recordXML->double_room_rate,
+                    'entrance_fee' => (string)$recordXML->entrance_fee);
          }
          
          return $records;

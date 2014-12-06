@@ -20,14 +20,14 @@ class Play extends Application {
     function index() {
         $this->data['pagebody'] = 'category';    // this is the view we want shown
         // build the list of attractions, to pass on to our view
-        $source = $this->attractions->getByCategory('play');
+        $source = $this->attractionsdb->all_for_cat('play');
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
-                'id' => $record->id, 
-                'image' => $record->image1, 
-                'category' => $record->category, 
-                'name' => $record->name);
+                'id' => $record['id'], 
+                'image' => $record['image1'], 
+                'category' => $record['category'], 
+                'name' => $record['name']);
         }
         $this->data['attractions'] = $attractions;
 
@@ -60,17 +60,17 @@ class Play extends Application {
     function single($id) {
         $this->data['pagebody'] = 'play';    // this is the view we want shown
 
-        $record = $this->attractions->getByID($id);
+        $record = $this->attractionsdb->get__with_XML($id);
         //$this->data = array_merge($this->data, $record);
-        $this->data['image'] = $record->image1;
-        $this->data['image2'] = $record->image2;
-        $this->data['image3'] = $record->image3;
-        $this->data['name'] = $record->name;
-        $this->data['contact'] = $record->contact;
-        $this->data['address'] = $record->address;
-        $this->data['longtext'] = $record->longtext;
-        $this->data['shorttext'] = $record->shorttext;
-        $this->data['entrance_fee'] = $record->entrance_fee;
+        $this->data['image'] = $record['image1'];
+        $this->data['image2'] = $record['image2'];
+        $this->data['image3'] = $record['image3'];
+        $this->data['name'] = $record['name'];
+        $this->data['contact'] = $record['contact'];
+        $this->data['address'] = $record['address'];
+        $this->data['longtext'] = $record['longtext'];
+        $this->data['shorttext'] = $record['shorttext'];
+        $this->data['entrance_fee'] = $record['entrance_fee'];
         $this->render();
     }
 

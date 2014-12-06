@@ -19,11 +19,11 @@ class Welcome extends Application {
     function index() {
         $this->data['pagebody'] = 'homepage';
 
-        $recent = $this->attractions->getMostRecent();
-        $this->data['id'] = $recent->id;
-        $this->data['category'] = $recent->category;
-        $this->data['banner'] = $recent->image1;
-        $this->data['name'] = $recent->name;
+        $recent = $this->attractionsdb->get_most_recent();
+        $this->data['id'] = $recent['id'];
+        $this->data['category'] = $recent['category'];
+        $this->data['banner'] = $recent['image1'];
+        $this->data['name'] = $recent['name'];
 
         $userRole = $this->session->userdata('userRole');
         
