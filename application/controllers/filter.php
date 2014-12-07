@@ -14,10 +14,9 @@ class Filter extends Application {
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
-                'name' => $record['name']
+                'id' => $record['id']
+                ,'name' => $record['name']
                 , 'category' => $record['category']
-                , 'price_range' => $record['price_range']
-                , 'target_audience' => $record['target_audience']
             );
         }
         $this->data['attractions'] = $attractions;
@@ -32,10 +31,9 @@ class Filter extends Application {
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
-                'name' => $record['name']
+                'id' => $record['id']
+                ,'name' => $record['name']
                 , 'category' => $record['category']
-                , 'price_range' => $record['price_range']
-                , 'target_audience' => $record['target_audience']
             );
         }
         $this->data['attractions'] = $attractions;
@@ -50,10 +48,9 @@ class Filter extends Application {
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
-                'name' => $record['name']
+                'id' => $record['id']
+                ,'name' => $record['name']
                 , 'category' => $record['category']
-                , 'price_range' => $record['price_range']
-                , 'target_audience' => $record['target_audience']
             );
         }
         $this->data['attractions'] = $attractions;

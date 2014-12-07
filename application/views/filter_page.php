@@ -3,13 +3,9 @@
         <div class="row col-xs-12">
 
             <div class="panel panel-default">
-                <div class="panel-heading">Attractions</div>
-                <!-- Table -->
-                <table class="table table-condensed table-hover">
-                    <tr>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>
+                <div class="panel-heading">
+                    Filter by:
+                    
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Price Range <span class="caret"></span>
@@ -22,8 +18,7 @@
 
                         </ul>
                     </div>
-                    </th>
-                    <th>
+                    
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Target Audience <span class="caret"></span>
@@ -35,17 +30,23 @@
 
                         </ul>
                     </div>
-                    </th>
+                </div>
+
+                <!-- Table -->
+                <table class="table table-condensed table-hover">
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
                     </tr>
+                    
                     {attractions}
                     <tr>
                         <td>{name}</td>
                         <td>{category}</td>
-                        <td>{price_range}</td>
-                        <td>{target_audience}</td>
+                        <td><a href="/{category}/single/{id}">More Info</a></td>
                     </tr>
-
                     {/attractions}
+                
                 </table>
             </div>
 
