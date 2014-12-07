@@ -102,7 +102,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <single_room_rate></single_room_rate>
     <double_room_rate></double_room_rate>
     <entrance_fee></entrance_fee>
-</xml_desc>','$$$','Family'),
+</xml_desc>','$$$$','Family'),
 (3, 'De Zotte' , 'eat', '<?xml version="1.0" encoding="UTF-8"?>
 <xml_desc>
     <images>
@@ -119,7 +119,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <single_room_rate></single_room_rate>
     <double_room_rate></double_room_rate>
     <entrance_fee></entrance_fee>
-</xml_desc>','$$$','Young Adults'),
+</xml_desc>','$$','Young Adults'),
 (4, 'Hotel Seven One Seven 717' , 'sleep', '<?xml version="1.0" encoding="UTF-8"?>
 <xml_desc>
     <images>
@@ -136,7 +136,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <single_room_rate>$100</single_room_rate>
     <double_room_rate>$150</double_room_rate>
     <entrance_fee></entrance_fee>
-</xml_desc>','$$$','Family'),
+</xml_desc>','$$','Family'),
 (5, 'The College Hotel' , 'sleep', '<?xml version="1.0" encoding="UTF-8"?>
 <xml_desc>
     <images>
@@ -170,7 +170,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <single_room_rate>$125</single_room_rate>
     <double_room_rate>$165</double_room_rate>
     <entrance_fee></entrance_fee>
-</xml_desc>','$$$','Young Adults'),
+</xml_desc>','$$$$$','Young Adults'),
 (7, 'Van Gogh Museum' , 'play', '<?xml version="1.0" encoding="UTF-8"?>
 <xml_desc>
     <images>
@@ -187,7 +187,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <single_room_rate></single_room_rate>
     <double_room_rate></double_room_rate>
     <entrance_fee>$15</entrance_fee>
-</xml_desc>','$','Family'),
+</xml_desc>','$$','Family'),
 (8, 'Anne Franks House' , 'play', '<?xml version="1.0" encoding="UTF-8"?>
 <xml_desc>
     <images>
@@ -204,7 +204,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <single_room_rate></single_room_rate>
     <double_room_rate></double_room_rate>
     <entrance_fee>$10</entrance_fee>
-</xml_desc>','$','Family'),
+</xml_desc>','$$','Family'),
 (9, 'Heineken Experience' , 'play', '<?xml version="1.0" encoding="UTF-8"?>
 <xml_desc>
     <images>
@@ -221,7 +221,7 @@ INSERT INTO `attractions` (`id`, `name`, `category`, `xml_desc`, `price_range`, 
     <single_room_rate></single_room_rate>
     <double_room_rate></double_room_rate>
     <entrance_fee>$20</entrance_fee>
-</xml_desc>','$$','Family');
+</xml_desc>','$$$$','Family');
 
 --
 -- Indexes for dumped tables

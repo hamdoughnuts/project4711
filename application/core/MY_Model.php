@@ -104,6 +104,7 @@ interface Active_record {
      * @return mixed The selected records, as an array of records
      */
     function some($what, $which);
+    
 }
 
 /**
@@ -117,7 +118,8 @@ class MY_Model extends CI_Model implements Active_Record {
 
     protected $_tableName;            // Which table is this a model for?
     protected $_keyField;             // name of the primary key field
-
+    protected $_price;
+    protected $_audience;
 //---------------------------------------------------------------------------
 //  Housekeeping methods
 //---------------------------------------------------------------------------
@@ -136,6 +138,8 @@ class MY_Model extends CI_Model implements Active_Record {
             $this->_tableName = $tablename;
 
         $this->_keyField = $keyfield;
+        $this->_audience = 'target_audience';
+        $this->_price = 'price_range';
      }
 
 //---------------------------------------------------------------------------
@@ -363,7 +367,7 @@ class MY_Model2 extends MY_Model {
         $query = $this->db->get($this->_tableName);
         return $query->result();
     }
-
 }
+
 
 /* End of file */

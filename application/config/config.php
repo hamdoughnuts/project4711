@@ -10,6 +10,7 @@ $config['menu_choices'] = array(
         array('name' => 'PLAY', 'link' => '/play'),
         array('name' => 'SLEEP', 'link' => '/sleep'),
         array('name' => 'ABOUT', 'link' => '/about'),
+        array('name' => 'SEE ALL', 'link' => '/filter'),
         array('name' => 'ADMIN', 'link' => '/admin', 'class' => 'hide')
     )
 );

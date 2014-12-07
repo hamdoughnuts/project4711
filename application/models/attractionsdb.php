@@ -6,14 +6,44 @@
  *
  * @author Danny Tran & Germaine Lo
  */
-class AttractionsDB extends MY_Model {
+class attractionsDB extends MY_Model {
 
     // constructor
     function __construct() {
         parent::__construct('attractions', 'id');
     }
     
+             // Return all records as an array of objects
+    function all_price_asc($primary = null) {
+        $this->db->order_by('category', 'asc');
+        $this->db->order_by('price_range', 'asc');
+        $query = $this->db->get($this->_tableName);
+        return $query->result();
     
+    }
+    function all_price_desc($primary = null) {
+        $this->db->order_by('category', 'desc');
+        $this->db->order_by('price_range', 'desc');
+        $query = $this->db->get($this->_tableName);
+        return $query->result();
+    
+    }
+    // Return all records as an array of objects
+    function all_audience_asc($primary = null) {
+            $this->db->order_by('category', 'asc');
+        $this->db->order_by('target_audience', 'asc');
+        $query = $this->db->get($this->_tableName);
+        return $query->result();
+    
+    }
+    // Return all records as an array of objects
+    function all_audience_desc($primary = null) {
+            $this->db->order_by('category', 'desc');
+        $this->db->order_by('target_audience', 'desc');
+        $query = $this->db->get($this->_tableName);
+        return $query->result();
+    
+    }
     //retrieve the different categories
     public function get_cats(){
         $categories = array ('eat','sleep', 'play');
