@@ -63,7 +63,7 @@ class Admin extends Application {
             // get the item record from the items model if it exists
             if ($this->attractionsdb->exists($id)) {
                 $item_record = $this->attractionsdb->get__with_XML($id);
-                var_dump($item_record);
+//                var_dump($item_record);
             }
             // else create an item record with the id
             else {
@@ -86,7 +86,7 @@ class Admin extends Application {
                 $item_record['single_room_rate'] = null;
                 $item_record['double_room_rate'] = null;
                 $item_record['entrance_fee'] = null;
-                var_dump($item_record);
+//                var_dump($item_record);
             }
             // save it as the “item” session object
             $this->session->set_userdata('item', $item_record);
@@ -274,17 +274,19 @@ class Admin extends Application {
         $this->data['pagebody'] = 'admin';
 
         // get the record that we want to delete
-        $record = $this->attractions->get($id);
+        $record = $this->attractionsdb->get($id);
+        
+        $record_xml = $this->attractionsdb->get__with_XML($id);
         // delete the record
         $this->attractions->delete($record->id);
 
         // delete associated images
-        if (file_exists(FCPATH . 'data/' . $record->image1))
-            unlink(FCPATH . 'data/' . $record->image1);
-        if (file_exists(FCPATH . 'data/' . $record->image2))
-            unlink(FCPATH . 'data/' . $record->image2);
-        if (file_exists(FCPATH . 'data/' . $record->image3))
-            unlink(FCPATH . 'data/' . $record->image3);
+        if (file_exists(FCPATH . 'data/' . $record_xml['image1']))
+            unlink(FCPATH . 'data/' . $record_xml['image1']);
+        if (file_exists(FCPATH . 'data/' . $record_xml['image2']))
+            unlink(FCPATH . 'data/' . $record_xml['image2']);
+        if (file_exists(FCPATH . 'data/' . $record_xml['image3']))
+            unlink(FCPATH . 'data/' . $record_xml['image3']);
 
         redirect('/admin/');
     }
