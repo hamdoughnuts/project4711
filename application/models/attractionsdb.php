@@ -143,7 +143,7 @@ class attractionsDB extends MY_Model {
     } 
     
     //override of the get one function from My_Model
-    function get__with_XML($key, $key2 = null) {
+    function retrieve_one($key, $key2 = null) {
         //call the parent get method
         $record = (array)$this->get($key);
         $recordXML = simplexml_load_string($record['xml_desc']);
@@ -172,7 +172,7 @@ class attractionsDB extends MY_Model {
         }
         
      //override of the all function to include the xml
-     function all_with_XML(){
+     function retrieve_all(){
          foreach ($this->all() as $record){
             $record = (array)$record;
             $recordXML = simplexml_load_string($record['xml_desc']);

@@ -23,7 +23,7 @@ class Admin extends Application {
         $this->data['pagebody'] = 'admin';
 
         // build the list of attractions, to pass on to our view
-        $source = $this->attractionsdb->all_with_XML();
+        $source = $this->attractionsdb->retrieve_all();
         $attractions = array();
 
         foreach ($source as $record) {
@@ -60,7 +60,7 @@ class Admin extends Application {
         if ($item_record == null) {
             // get the item record from the items model if it exists
             if ($this->attractionsdb->exists($id)) {
-                $item_record = $this->attractionsdb->get__with_XML($id);
+                $item_record = $this->attractionsdb->retrieve_one($id);
 //                var_dump($item_record);
             }
             // else create an item record with the id
@@ -166,7 +166,7 @@ class Admin extends Application {
         
         // over-riding any edited fields in the session record
         if ($this->attractionsdb->exists($id))
-            $to_update = $this->attractionsdb->get__with_XML($id);
+            $to_update = $this->attractionsdb->retrieve_one($id);
 
         $to_update['name'] = $_POST['name'];
         $to_update['category'] = $_POST['category'];
@@ -274,7 +274,7 @@ class Admin extends Application {
         // get the record that we want to delete
         $record = $this->attractionsdb->get($id);
         
-        $record_xml = $this->attractionsdb->get__with_XML($id);
+        $record_xml = $this->attractionsdb->retrieve_one($id);
         // delete the record
         $this->attractions->delete($record->id);
 

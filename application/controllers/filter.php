@@ -18,7 +18,7 @@ class Filter extends Application {
         $this->data['pagebody'] = 'filter_page';
 
         // build the list of attractions, to pass on to our view
-        $source = $this->attractionsdb->all_with_XML();
+        $source = $this->attractionsdb->retrieve_all();
         $attractions = array();
 
         foreach ($source as $record) {
@@ -127,7 +127,7 @@ class Filter extends Application {
         if ($item_record == null) {
             // get the item record from the items model if it exists
             if ($this->attractionsdb->exists($id)) {
-                $item_record = $this->attractionsdb->get__with_XML($id);
+                $item_record = $this->attractionsdb->retrieve_one($id);
 //                var_dump($item_record);
             }
             // else create an item record with the id

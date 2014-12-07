@@ -60,7 +60,7 @@ class Sleep extends Application {
     function single($id) {
         $this->data['pagebody'] = 'sleep';    // this is the view we want shown
 
-        $record = $this->attractionsdb->get__with_XML($id);
+        $record = $this->attractionsdb->retrieve_one($id);
         //$this->data = array_merge($this->data, $record);
         $this->data['image'] = $record['image1'];
         $this->data['image2'] = $record['image2'];
