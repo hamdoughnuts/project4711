@@ -18,7 +18,6 @@ class Welcome extends Application {
 
     function index() {
         $this->data['pagebody'] = 'homepage';
-
         $recent = $this->attractionsdb->get_most_recent();
         $this->data['id'] = $recent['id'];
         $this->data['category'] = $recent['category'];

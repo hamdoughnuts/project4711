@@ -5,7 +5,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 class Filter extends Application {
 
     function __construct() {
@@ -34,12 +33,15 @@ class Filter extends Application {
         $this->data['attractions'] = $attractions;
         $this->render();
     }
-
     function price() {
         $this->data['pagebody'] = 'filter_page';
-
-        $source = $this->attractionsdb->all_price_asc();
-        $source = $this->attractionsdb->all_price_desc();
+        if($this->data['price'] == 1){
+            $source = $this->attractionsdb->all_price_asc();
+            $this->data['price'] = 2;
+        } else {
+            $source = $this->attractionsdb->all_price_desc();
+            $this->data['price'] = 1;
+        }
         foreach ($source as $record) {
             $attractions[] = array(
                 'name' => $record->name
