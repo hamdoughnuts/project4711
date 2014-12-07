@@ -2,14 +2,10 @@
 
 <!-- Most recent  -->
 <a href="{category}/{id}">
-    <div class="col-lg-6 col-lg-offset-3 greyLayer top-buffer">
-
+    <div class="col-lg-6 col-lg-offset-3 greyLayer">
         <div class="inner-button grow">
-
             <img src="/data/{banner}" title="{name}" class="img-responsive"/>
             <div class="showme">{name}</div>
-
-
         </div>
     </div>
 </a>
