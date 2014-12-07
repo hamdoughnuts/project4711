@@ -8,10 +8,10 @@
             <a href="/data/{image}" data-lightbox="{id}" data-title="{shorttext}">
                 <img src="/data/{image}" title="{name}" class="img-responsive"/>
             </a>
-             <a href="/data/{image2}" class="hide" data-lightbox="{id}" data-title="{shorttext}">
+            <a href="/data/{image2}" class="hide" data-lightbox="{id}" data-title="{shorttext}">
                 <img src="/data/{image2}" title="{name}" class="img-responsive"/>
             </a>
-             <a href="/data/{image3}" class="hide" data-lightbox="{id}" data-title="{shorttext}">
+            <a href="/data/{image3}" class="hide" data-lightbox="{id}" data-title="{shorttext}">
                 <img src="/data/{image3}" title="{name}" class="img-responsive"/>
             </a>
         </div>
@@ -34,7 +34,7 @@
             <span class="whiteWords">{longtext}</span>
         </div>
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox"></div>
+        <div class="addthis_sharing_toolbox"></div>
 
     </div>
 </div>

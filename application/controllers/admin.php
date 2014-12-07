@@ -14,7 +14,7 @@ class Admin extends Application {
 
     // renders admin page showing the id, category, name and date added
     function index() {
-                //check if admin is logged in
+        //check if admin is logged in
         $userRole = $this->session->userdata('userRole');
         if ($userRole == null) {
             redirect('/login');
@@ -33,9 +33,8 @@ class Admin extends Application {
                 , 'name' => $record['name']
                 , 'date' => $record['date']
             );
-               
         }
-        
+
         $this->data['attractions'] = $attractions;
         $this->render();
     }
@@ -94,17 +93,17 @@ class Admin extends Application {
         $this->data['id'] = $item_record['id'];
         $this->data['category'] = $item_record['category'];
         $this->data['name'] = $item_record['name'];
-        
+
         if ($item_record['image1'] === "")
             $this->data['image'] = "default.jpg";
         else
             $this->data['image'] = $item_record['image1'];
-        
+
         if ($item_record['image2'] === "")
             $this->data['image2'] = "default.jpg";
         else
             $this->data['image2'] = $item_record['image2'];
-        
+
         if ($item_record['image3'] === "")
             $this->data['image3'] = "default.jpg";
         else
@@ -118,7 +117,7 @@ class Admin extends Application {
         $this->data['single_room_rate'] = $item_record['single_room_rate'];
         $this->data['double_room_rate'] = $item_record['double_room_rate'];
         $this->data['entrance_fee'] = $item_record['entrance_fee'];
-        
+
         // check which category view to use
         if ($this->data['category'] == 'eat') {
             $this->data['pagebody'] = 'edit_eat';
@@ -163,18 +162,18 @@ class Admin extends Application {
 
         // get the session item record
         $to_update = $this->session->userdata('item');
-        
+
         // over-riding any edited fields in the session record
         if ($this->attractionsdb->exists($id))
             $to_update = $this->attractionsdb->retrieve_one($id);
 
         $to_update['name'] = $_POST['name'];
         $to_update['category'] = $_POST['category'];
-        
+
         $image1 = $to_update['image1'];
         $image2 = $to_update['image2'];
         $image3 = $to_update['image3'];
-        
+
         if ($this->upload->do_upload('image1')) {
             $image1 = $_FILES['image1']['name'];
         }
@@ -203,31 +202,30 @@ class Admin extends Application {
             $entrance_fee = $_POST['entrance_fee'];
         }
         //New STUFF
-        $xml_desc = '<?xml version="1.0" encoding="UTF-8"?>'.
-    '<xml_desc>'.
-        '<images>'.
-           '<image>'.$image1.'</image>'.
-            '<image>'.$image2.'</image>'.
-            '<image>'.$image3.'</image>'.
-        '</images>'.
-        '<longtext>'.$longtext.'</longtext>'.
-        '<shorttext>'.$shorttext.'</shorttext>'.
-        '<contact>'.$contact.'</contact>'.
-        '<address>'.$address.'</address>'.
-        '<date>'.date('Y/m/d h:i:s', time()).'</date>'.
-        '<most_popular_dish>'.$most_popular_dish.'</most_popular_dish>'.
-        '<single_room_rate>'.$single_room_rate.'</single_room_rate>'.
-        '<double_room_rate>'.$double_room_rate.'</double_room_rate>'.
-        '<entrance_fee>'.$entrance_fee.'</entrance_fee>'.
-    '</xml_desc>';
+        $xml_desc = '<?xml version="1.0" encoding="UTF-8"?>' .
+                '<xml_desc>' .
+                '<images>' .
+                '<image>' . $image1 . '</image>' .
+                '<image>' . $image2 . '</image>' .
+                '<image>' . $image3 . '</image>' .
+                '</images>' .
+                '<longtext>' . $longtext . '</longtext>' .
+                '<shorttext>' . $shorttext . '</shorttext>' .
+                '<contact>' . $contact . '</contact>' .
+                '<address>' . $address . '</address>' .
+                '<date>' . date('Y/m/d h:i:s', time()) . '</date>' .
+                '<most_popular_dish>' . $most_popular_dish . '</most_popular_dish>' .
+                '<single_room_rate>' . $single_room_rate . '</single_room_rate>' .
+                '<double_room_rate>' . $double_room_rate . '</double_room_rate>' .
+                '<entrance_fee>' . $entrance_fee . '</entrance_fee>' .
+                '</xml_desc>';
         $to_update['xml_desc'] = $xml_desc;
         $record['id'] = $to_update['id'];
         $record['name'] = $to_update['name'];
         $record['category'] = $to_update['category'];
         $record['xml_desc'] = $xml_desc;
-        
+
         //END OF NEW STUFF
-        
         // update the session item
         $this->session->set_userdata('item', $to_update);
 
@@ -263,7 +261,7 @@ class Admin extends Application {
         // get an id number for a new attraction
         $id = $this->attractionsdb->highest() + 1;
         // redirect to edit form with the new id
-        
+
         redirect('/admin/edit/' . $id);
     }
 
@@ -273,7 +271,7 @@ class Admin extends Application {
 
         // get the record that we want to delete
         $record = $this->attractionsdb->get($id);
-        
+
         $record_xml = $this->attractionsdb->retrieve_one($id);
         // delete the record
         $this->attractions->delete($record->id);

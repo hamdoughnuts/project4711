@@ -13,6 +13,7 @@ class Login extends Application {
         $this->checkForAdmin();
         $this->render();
     }
+
     //A Function that gets called after the form is posted and this will validate
     //whether the user can log in
     function submit() {

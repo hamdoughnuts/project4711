@@ -36,7 +36,6 @@ if (!function_exists('makeTextField')) {
             'maxlen' => $maxlen,
             'size' => $size,
             'disabled' => ($disabled ? 'disabled="disabled"' : '')
-            
         );
         return $CI->parser->parse('_fields/textfield', $parms, true);
     }

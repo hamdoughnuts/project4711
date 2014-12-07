@@ -24,14 +24,14 @@ class Sleep extends Application {
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
-                'id' => $record['id'], 
-                'image' => $record['image1'], 
-                'category' => $record['category'], 
+                'id' => $record['id'],
+                'image' => $record['image1'],
+                'category' => $record['category'],
                 'name' => $record['name']);
         }
         $this->data['attractions'] = $attractions;
 
-        
+
         $this->render();
     }
 

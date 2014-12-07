@@ -5,6 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 class Filter extends Application {
 
     function __construct() {
@@ -32,11 +33,16 @@ class Filter extends Application {
         $this->data['attractions'] = $attractions;
         $this->render();
     }
+
+    /**
+     * Retrieves the prices then orders them from high to low and displays it 
+     * in the view
+     */
     function price_high_low() {
         $this->data['pagebody'] = 'filter_page';
-       
-            $source = $this->attractionsdb->all_price_desc();
-         
+
+        $source = $this->attractionsdb->all_price_desc();
+
         foreach ($source as $record) {
             $attractions[] = array(
                 'name' => $record->name
@@ -50,11 +56,15 @@ class Filter extends Application {
         $this->render();
     }
 
+    /**
+     * Retrieves the prices then orders them from low to high and displays it 
+     * in the view
+     */
     function price_low_high() {
         $this->data['pagebody'] = 'filter_page';
-               $source = $this->attractionsdb->all_price_asc();
-       
-         
+        $source = $this->attractionsdb->all_price_asc();
+
+
         foreach ($source as $record) {
             $attractions[] = array(
                 'name' => $record->name
@@ -67,12 +77,16 @@ class Filter extends Application {
         $this->data['attractions'] = $attractions;
         $this->render();
     }
+
+    /**
+     * Retrieves all of the target audience and orders them by adults first
+     */
     function audience_adults() {
         $this->data['pagebody'] = 'filter_page';
 
 
-            $source = $this->attractionsdb->all_audience_desc();
-     
+        $source = $this->attractionsdb->all_audience_desc();
+
 
         foreach ($source as $record) {
             $attractions[] = array(
@@ -85,13 +99,14 @@ class Filter extends Application {
         $this->data['attractions'] = $attractions;
         $this->render();
     }
-        function audience_family() {
+
+    function audience_family() {
         $this->data['pagebody'] = 'filter_page';
 
 
-            $source = $this->attractionsdb->all_audience_asc();
+        $source = $this->attractionsdb->all_audience_asc();
 
-     
+
 
         foreach ($source as $record) {
             $attractions[] = array(

@@ -2,17 +2,17 @@
 
 <!-- Most recent  -->
 <a href="{category}/{id}">
-<div class="col-lg-6 col-lg-offset-3 greyLayer top-buffer">
-    
-    <div class="inner-button grow">
-            
-                <img src="/data/{banner}" title="{name}" class="img-responsive"/>
-                <div class="showme">{name}</div>
-            
+    <div class="col-lg-6 col-lg-offset-3 greyLayer top-buffer">
 
+        <div class="inner-button grow">
+
+            <img src="/data/{banner}" title="{name}" class="img-responsive"/>
+            <div class="showme">{name}</div>
+
+
+        </div>
     </div>
-</div>
-    </a>
+</a>
 <!-- End most recent-->
 
 <div id="page-content-wrapper">

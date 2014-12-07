@@ -14,7 +14,7 @@ class Attractions extends MY_Model {
      */
 
     public function __construct() {
-        parent::__construct('attractions','id');
+        parent::__construct('attractions', 'id');
     }
 
     /*
@@ -49,7 +49,7 @@ class Attractions extends MY_Model {
 
     public function getMostRecent() {
         $records = $this->attractions->all();
-        
+
         $temp = $this->attractions->get(1);
         // iterate over the data and return most recent
         foreach ($records as $record)
@@ -57,4 +57,5 @@ class Attractions extends MY_Model {
                 $temp = $record;
         return $temp;
     }
+
 }

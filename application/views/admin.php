@@ -6,7 +6,7 @@
                 <div class="btn-group" role="group" aria-label="...">
                     <a href="/admin/newAttraction"><button type="button" class="btn btn-default">Create new attraction</button></a>
                     <a href="/logout"><button type="button" class="btn btn-default">Logout</button></a>
-                     
+
                 </div>
                 <div class="panel-heading">Attractions</div>
 

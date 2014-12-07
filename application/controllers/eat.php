@@ -11,7 +11,6 @@ class Eat extends Application {
     function __construct() {
         parent::__construct();
         $this->checkForAdmin();
-        
     }
 
     /*
@@ -25,15 +24,15 @@ class Eat extends Application {
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
-                'id' => $record['id'], 
-                'image' => $record['image1'], 
-                'category' => $record['category'], 
+                'id' => $record['id'],
+                'image' => $record['image1'],
+                'category' => $record['category'],
                 'name' => $record['name']);
         }
         $this->data['attractions'] = $attractions;
 
-        
-        
+
+
         $this->render();
     }
 
@@ -55,7 +54,7 @@ class Eat extends Application {
         $this->data['longtext'] = $record['longtext'];
         $this->data['shorttext'] = $record['shorttext'];
         $this->data['most_popular'] = $record['most_popular_dish'];
-        
+
         $this->render();
     }
 
