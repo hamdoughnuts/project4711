@@ -29,19 +29,14 @@ class Filter extends Application {
                 , 'target_audience' => $record['target_audience']
             );
         }
-
         $this->data['attractions'] = $attractions;
         $this->render();
     }
-    function price() {
+    function price_high_low() {
         $this->data['pagebody'] = 'filter_page';
-        if($this->data['price'] == 1){
-            $source = $this->attractionsdb->all_price_asc();
-            $this->data['price'] = 2;
-        } else {
+       
             $source = $this->attractionsdb->all_price_desc();
-            $this->data['price'] = 1;
-        }
+         
         foreach ($source as $record) {
             $attractions[] = array(
                 'name' => $record->name
@@ -55,13 +50,47 @@ class Filter extends Application {
         $this->render();
     }
 
-    function audience() {
+    function price_low_high() {
+        $this->data['pagebody'] = 'filter_page';
+               $source = $this->attractionsdb->all_price_asc();
+       
+         
+        foreach ($source as $record) {
+            $attractions[] = array(
+                'name' => $record->name
+                , 'category' => $record->category
+                , 'price_range' => $record->price_range
+                , 'target_audience' => $record->target_audience
+            );
+        }
+
+        $this->data['attractions'] = $attractions;
+        $this->render();
+    }
+    function audience_adults() {
+        $this->data['pagebody'] = 'filter_page';
+
+
+            $source = $this->attractionsdb->all_audience_desc();
+     
+
+        foreach ($source as $record) {
+            $attractions[] = array(
+                'name' => $record->name
+                , 'category' => $record->category
+                , 'price_range' => $record->price_range
+                , 'target_audience' => $record->target_audience
+            );
+        }
+        $this->data['attractions'] = $attractions;
+        $this->render();
+    }
+        function audience_family() {
         $this->data['pagebody'] = 'filter_page';
 
 
             $source = $this->attractionsdb->all_audience_asc();
 
-            $source = $this->attractionsdb->all_audience_desc();
      
 
         foreach ($source as $record) {

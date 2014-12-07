@@ -4,15 +4,39 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">Attractions</div>
-
-
                 <!-- Table -->
                 <table class="table table-condensed table-hover">
                     <tr>
                         <th>Name</th>
                         <th>Category</th>
-                        <th><a href="/filter/price">Price Range</a></th>
-                        <th><a href="/filter/audience">Target Audience</a></th>
+                        <th>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            Audience <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+
+                            <li><a href="#">Price Range</a></li>
+                            <li><a href="/filter/price_high_low">Price High-Low</a></li>
+                            <li><a href="/filter/price_low_high">Price Low-High</a></li>
+
+                        </ul>
+                    </div>
+                    </th>
+                        <th>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Target Audience <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li><a href="#">Target Audience</a></li>
+                                    <li><a href="/filter/audience_adults">Target Audience Young adults</a></li>
+                                    <li><a href="/filter/audience_family">Target Audience Family first</a></li>
+
+                                </ul>
+                            </div>
+                        </th>
                     </tr>
                     {attractions}
                     <tr>

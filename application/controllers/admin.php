@@ -42,8 +42,6 @@ class Admin extends Application {
 
     // renders an edit page for a single attraction
     function edit($id) {
-        $this->load->library('session');
-
         // using "item" as the session key
         // assuming no item record in-progress
         $item_record = null;

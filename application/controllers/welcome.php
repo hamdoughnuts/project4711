@@ -25,6 +25,7 @@ class Welcome extends Application {
         $this->data['name'] = $recent['name'];
 
         $userRole = $this->session->userdata('userRole');
+        $price_range = $this->session->userdata('price');
         
         //echo var_dump($recent);
         $this->render();
