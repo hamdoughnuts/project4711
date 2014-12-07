@@ -84,6 +84,70 @@ class attractionsDB extends MY_Model {
         return null;
     }
 
+    //retrieve all attractions for a certain price
+    public function all_for_price($price) {
+        $records = array();
+        $count = 0;
+        //itreate over the data until we find records that match the category
+        foreach ($this->all() as $record) {
+            $record = (array) $record;
+
+            if ($record['price_range'] == $price) {
+                $recordXML = simplexml_load_string($record['xml_desc']);
+                $records[] = array('id' => $record['id'],
+                    'category' => $record['category'],
+                    'name' => $record['name'],
+                    'contact' => (string) $recordXML->contact,
+                    'address' => (string) $recordXML->address,
+                    'longtext' => (string) $recordXML->longtext,
+                    'date' => (string) $recordXML->date,
+                    'shorttext' => (string) $recordXML->shorttext,
+                    'image1' => (string) $recordXML->images->image[0],
+                    'image2' => (string) $recordXML->images->image[1],
+                    'image3' => (string) $recordXML->images->image[2],
+                    'price_range' => $record['price_range'],
+                    'target_audience' => $record['target_audience']);
+                $count++;
+            }
+        }
+        if ($count > 0) {
+            return $records;
+        }
+        return null;
+    }
+    
+    //retrieve all attractions for a certain group
+    public function all_for_group($group) {
+        $records = array();
+        $count = 0;
+        //itreate over the data until we find records that match the category
+        foreach ($this->all() as $record) {
+            $record = (array) $record;
+
+            if ($record['target_audience'] == $group) {
+                $recordXML = simplexml_load_string($record['xml_desc']);
+                $records[] = array('id' => $record['id'],
+                    'category' => $record['category'],
+                    'name' => $record['name'],
+                    'contact' => (string) $recordXML->contact,
+                    'address' => (string) $recordXML->address,
+                    'longtext' => (string) $recordXML->longtext,
+                    'date' => (string) $recordXML->date,
+                    'shorttext' => (string) $recordXML->shorttext,
+                    'image1' => (string) $recordXML->images->image[0],
+                    'image2' => (string) $recordXML->images->image[1],
+                    'image3' => (string) $recordXML->images->image[2],
+                    'price_range' => $record['price_range'],
+                    'target_audience' => $record['target_audience']);
+                $count++;
+            }
+        }
+        if ($count > 0) {
+            return $records;
+        }
+        return null;
+    }
+
     //retrieve the most recent attraction for the category
     public function recent_for_cat($category) {
         $recent = null;

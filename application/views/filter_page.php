@@ -12,12 +12,13 @@
                         <th>
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Audience <span class="caret"></span>
+                            Price Range <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
 
-                            <li><a href="/filter/price_high_low">Price High-Low</a></li>
-                            <li><a href="/filter/price_low_high">Price Low-High</a></li>
+                            <li><a href="/filter/filter_by_price/low">$</a></li>
+                            <li><a href="/filter/filter_by_price/med">$$</a></li>
+                            <li><a href="/filter/filter_by_price/high">$$$</a></li>
 
                         </ul>
                     </div>
@@ -29,8 +30,8 @@
                         </button>
                         <ul class="dropdown-menu" role="menu">
 
-                            <li><a href="/filter/audience_adults">Target Audience Young adults</a></li>
-                            <li><a href="/filter/audience_family">Target Audience Family first</a></li>
+                            <li><a href="/filter/filter_by_group/youth">Young adults</a></li>
+                            <li><a href="/filter/filter_by_group/family">Family</a></li>
 
                         </ul>
                     </div>

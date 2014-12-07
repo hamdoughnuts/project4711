@@ -75,7 +75,7 @@ class Application extends CI_Controller {
                     array('name' => 'PLAY', 'link' => '/play'),
                     array('name' => 'SLEEP', 'link' => '/sleep'),
                     array('name' => 'ABOUT', 'link' => '/about'),
-                    array('name' => 'SEE ALL', 'link' => '/filter'),
+                    array('name' => 'FILTERING', 'link' => '/filter'),
                     array('name' => 'ADMIN', 'link' => '/admin'),
                     array('name' => 'LOGOUT', 'link' => '/logout')
                 )
@@ -89,7 +89,7 @@ class Application extends CI_Controller {
                     array('name' => 'PLAY', 'link' => '/play'),
                     array('name' => 'SLEEP', 'link' => '/sleep'),
                     array('name' => 'ABOUT', 'link' => '/about'),
-                    array('name' => 'SEE ALL', 'link' => '/filter'),
+                    array('name' => 'FILTERING', 'link' => '/filter'),
                     array('name' => 'LOGOUT', 'link' => '/logout')
                 )
                     )
@@ -101,7 +101,7 @@ class Application extends CI_Controller {
                     array('name' => 'PLAY', 'link' => '/play'),
                     array('name' => 'SLEEP', 'link' => '/sleep'),
                     array('name' => 'ABOUT', 'link' => '/about'),
-                    array('name' => 'SEE ALL', 'link' => '/filter'),
+                    array('name' => 'FILTERING', 'link' => '/filter'),
                     array('name' => 'LOGIN', 'link' => '/login')
                 )
                     )
