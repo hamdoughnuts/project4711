@@ -3,8 +3,11 @@
         <div class="row col-xs-12">
 
             <div class="panel panel-default">
-                <a href="/admin/newAttraction">Create new attraction</a>
-                <a href="/logout">Logout</a>
+                <div class="btn-group" role="group" aria-label="...">
+                    <a href="/admin/newAttraction"><button type="button" class="btn btn-default">Create new attraction</button></a>
+                    <a href="/logout"><button type="button" class="btn btn-default">Logout</button></a>
+                     
+                </div>
                 <div class="panel-heading">Attractions</div>
 
 
