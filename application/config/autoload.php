@@ -112,7 +112,7 @@ $autoload['language'] = array();
   |
  */
 
-$autoload['model'] = array('attractionsdb', 'attractions', 'users');
+$autoload['model'] = array('attractions', 'users');
 
 
 /* End of file autoload.php */

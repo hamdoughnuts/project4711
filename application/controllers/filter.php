@@ -10,7 +10,7 @@ class Filter extends Application {
     function index() {
         $this->data['pagebody'] = 'filter_page';
         // build the list of attractions, to pass on to our view
-        $source = $this->attractionsdb->retrieve_all();
+        $source = $this->attractions->get_all_attractions();
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
@@ -27,7 +27,7 @@ class Filter extends Application {
     function filter_by_price($price) {
         $this->data['pagebody'] = 'filter_page';
         // build the list of attractions, to pass on to our view
-        $source = $this->attractionsdb->all_for_price($price);
+        $source = $this->attractions->attractions_by_price($price);
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
@@ -44,7 +44,7 @@ class Filter extends Application {
     function filter_by_group($group) {
         $this->data['pagebody'] = 'filter_page';
         // build the list of attractions, to pass on to our view
-        $source = $this->attractionsdb->all_for_group($group);
+        $source = $this->attractions->attractions_by_target($group);
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(

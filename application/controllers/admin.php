@@ -23,7 +23,7 @@ class Admin extends Application {
         $this->data['pagebody'] = 'admin';
 
         // build the list of attractions, to pass on to our view
-        $source = $this->attractionsdb->retrieve_all();
+        $source = $this->attractions->get_all_attractions();
         $attractions = array();
 
         foreach ($source as $record) {
@@ -58,13 +58,13 @@ class Admin extends Application {
         // if there is no item in the session
         if ($item_record == null) {
             // get the item record from the items model if it exists
-            if ($this->attractionsdb->exists($id)) {
-                $item_record = $this->attractionsdb->retrieve_one($id);
+            if ($this->attractions->exists($id)) {
+                $item_record = $this->attractions->get_by_id($id);
 //                var_dump($item_record);
             }
             // else create an item record with the id
             else {
-                $item_record = $this->attractionsdb->create();
+                $item_record = $this->attractions->create();
                 /**
                  * Working on this line because you are trying to create a new attraction
                  */
@@ -164,8 +164,8 @@ class Admin extends Application {
         $to_update = $this->session->userdata('item');
 
         // over-riding any edited fields in the session record
-        if ($this->attractionsdb->exists($id))
-            $to_update = $this->attractionsdb->retrieve_one($id);
+        if ($this->attractions->exists($id))
+            $to_update = $this->attractions->get_by_id($id);
 
         $to_update['name'] = $_POST['name'];
         $to_update['category'] = $_POST['category'];
@@ -232,9 +232,9 @@ class Admin extends Application {
         // update or create if ok
         if (count($this->errors) < 1) {
             // check if updating
-            if ($this->attractionsdb->exists($id)) {
+            if ($this->attractions->exists($id)) {
                 // update record in db
-                $this->attractionsdb->update($record);
+                $this->attractions->update($record);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
                 $this->index();
@@ -245,7 +245,7 @@ class Admin extends Application {
                 //$record['date'] = date('Y/m/d h:i:s', time());
                 // add the attraction
                 // todo: fix this!!
-                $this->attractionsdb->add($record);
+                $this->attractions->add($record);
                 // remove the item record from the session container
                 $this->session->unset_userdata('item');
                 $this->index();
@@ -259,7 +259,7 @@ class Admin extends Application {
     // start a new attraction
     function newAttraction() {
         // get an id number for a new attraction
-        $id = $this->attractionsdb->highest() + 1;
+        $id = $this->attractions->highest() + 1;
         // redirect to edit form with the new id
 
         redirect('/admin/edit/' . $id);
@@ -270,9 +270,9 @@ class Admin extends Application {
         $this->data['pagebody'] = 'admin';
 
         // get the record that we want to delete
-        $record = $this->attractionsdb->get($id);
+        $record = $this->attractions->get($id);
 
-        $record_xml = $this->attractionsdb->retrieve_one($id);
+        $record_xml = $this->attractions->get_by_id($id);
         // delete the record
         $this->attractions->delete($record->id);
 

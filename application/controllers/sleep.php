@@ -20,7 +20,7 @@ class Sleep extends Application {
     function index() {
         $this->data['pagebody'] = 'category';    // this is the view we want shown
         // build the list of attractions, to pass on to our view
-        $source = $this->attractionsdb->all_for_cat('sleep');
+        $source = $this->attractions->attractions_by_category('sleep');
         $attractions = array();
         foreach ($source as $record) {
             $attractions[] = array(
@@ -60,7 +60,7 @@ class Sleep extends Application {
     function single($id) {
         $this->data['pagebody'] = 'sleep';    // this is the view we want shown
 
-        $record = $this->attractionsdb->retrieve_one($id);
+        $record = $this->attractions->get_by_id($id);
         //$this->data = array_merge($this->data, $record);
         $this->data['image'] = $record['image1'];
         $this->data['image2'] = $record['image2'];
